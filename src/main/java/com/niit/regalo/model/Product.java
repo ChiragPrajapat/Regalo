@@ -1,7 +1,12 @@
 package com.niit.regalo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Product {
-	private String product_id;
+	@Id
+	private int product_id;
 	private String product_name;
 	private String product_supplier;
 	private int product_price;
@@ -12,7 +17,7 @@ public class Product {
 	{
 		
 	}
-	public Product(String product_id, String product_name, String product_supplier, int product_price,
+	public Product(int product_id, String product_name, String product_supplier, int product_price,
 			String product_description, String product_category) {
 		super();
 		this.product_id = product_id;
@@ -39,11 +44,11 @@ public class Product {
 		this.product_category = product_category;
 	}
 
-	public String getProduct_id() {
+	public int getProduct_id() {
 		return product_id;
 	}
 
-	public void setProduct_id(String product_id) {
+	public void setProduct_id(int product_id) {
 		this.product_id = product_id;
 	}
 
@@ -71,7 +76,10 @@ public class Product {
 		this.product_price = product_price;
 	}
 
-
+	public String toString()
+	{
+		return product_id + " " + product_name; 
+	}
 	
 	
 }

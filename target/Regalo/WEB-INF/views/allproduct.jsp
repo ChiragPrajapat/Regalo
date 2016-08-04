@@ -1,3 +1,5 @@
+	<%@ include file="header.jsp"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -21,7 +23,6 @@
 </head>
 <body>
 
-	<%@ include file="header.jsp"%>
 	<div class="container">
 		<h2>Available products</h2>
 
@@ -41,8 +42,8 @@
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach items="${product}" var="product">
-						 <tr ng-repeat="product in Data|filter:{product_category:'birthday'}|filter:search">
+						<c:forEach items="${lists}" var="product">
+<!-- 						 <tr ng-repeat="product in Data|filter:{product_category:'birthday'}|filter:search"> -->
 						 
 							<tr>
 								<td>${product.product_id}</td>

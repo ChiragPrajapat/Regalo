@@ -18,24 +18,12 @@
 
 </head>
 <body>
-	<div class="row">
-		<div class="col-md-2">
-			<img src="<c:url value="/resources/images/logo3.png" />" alt=""
-				height="200" width="200"></a>
-		
-		</div>
-	
 
-
+<br>
 <div class="container">
-  <div class="jumbotron">
-    <h1>Regalo</h1>
+    <img src="<c:url value="/resources/images/logo3.png" />" height="100" width="100"> <h1>Regalo</h1>
     <p><I>Online portal for gifts!</I></p>
   </div>
-  
-</div>
-
-	</div>
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -56,7 +44,8 @@
 				<!--       </li> -->
 
 
-				<li><a href="prod">Products</a></li>
+				<li><a href="allproduct">Products</a></li>
+				
 	<li><a href="addproduct">Add Product</a></li>
 			
 				<li><a href="aboutus">About Us</a></li>

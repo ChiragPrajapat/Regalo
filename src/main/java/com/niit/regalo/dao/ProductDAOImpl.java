@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.niit.regalo.model.Product;
@@ -12,7 +13,7 @@ import com.niit.regalo.model.Product;
 	public class ProductDAOImpl implements ProductDAO {
 		
 //		private static final Logger logger = LoggerFactory.getLogger(ProductDAOImpl.class);
-
+		@Autowired 
 		private SessionFactory sessionFactory;
 		
 		public void setSessionFactory(SessionFactory sf){
@@ -21,7 +22,7 @@ import com.niit.regalo.model.Product;
 
 		@Override
 		public void addProduct(Product p) {
-			Session session = this.sessionFactory.getCurrentSession();
+			Session session = this.sessionFactory.openSession();
 			session.persist(p);
 //			logger.info("Product saved successfully, Product Details="+p);
 		}
@@ -36,11 +37,11 @@ import com.niit.regalo.model.Product;
 		@SuppressWarnings("unchecked")
 		@Override
 		public List<Product> listProducts() {
-			Session session = this.sessionFactory.getCurrentSession();
+			Session session = this.sessionFactory.openSession();
 			List<Product> productsList = session.createQuery("from Product").list();
-			for(Product p : productsList){
-//				logger.info("Product List::"+p);
-			}
+//			for(Product p : productsList){
+////				logger.info("Product List::"+p);
+//			}			
 			return productsList;
 		}
 

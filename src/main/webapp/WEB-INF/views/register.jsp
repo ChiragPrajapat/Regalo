@@ -32,7 +32,7 @@
 			<table>
 				<tr>
 					<td><div class="form group">
-							<label for="name"> Name:<label> 
+							<label for="name"> Name:</label> 
 							<input type="text"
 								class="form-control" name= "name" id="fname" placeholder="Name"
 								required >
@@ -41,7 +41,7 @@
 				<tr>
 					<td>
 						<div class="form group">
-							<label for="pasword"> Password:<label> 
+							<label for="password"> Password:</label> 
 							<input type="password"
 								class="form-control" id="pwd">
 						</div>

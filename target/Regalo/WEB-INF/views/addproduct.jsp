@@ -1,3 +1,4 @@
+<%@ include file="header.jsp" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -7,8 +8,8 @@
 <title>Add Product</title>
 </head>
 <body>
-<%@ include file="header.jsp" %>
-<form:form method="POST" action="/sdnext/save.html">
+
+<form:form method="POST" commandName="addproduct">
       <table>
        <tr>
            <td><form:label path="id">Product ID:</form:label></td>
@@ -16,7 +17,7 @@
        </tr>
        <tr>
            <td><form:label path="name">Product Name:</form:label></td>
-           <td><form:input path="name" value="${productt.product_name}"/></td>
+           <td><form:input path="name" value="${product.product_name}"/></td>
        </tr>
        <tr>
            <td><form:label path="supplier">Product Supplier</form:label></td>
