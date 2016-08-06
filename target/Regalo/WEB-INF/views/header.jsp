@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>	
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,21 +10,37 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<link href="<spring:url value="/resources/css/bootstrap.css" />" rel="stylesheet">
+
+
+<script type="text/javascript" src="<spring:url value="/resources/js/html5shiv.min.js" />" /></script>
+<script type="text/javascript" src="<spring:url value="/resources/js/respond.min.js" />" /></script>
+<script type="text/javascript" src="<spring:url value="/resources/jquery/jquery-2.2.4.min.js"/>" /></script>
+<script type="text/javascript" src="<spring:url value="/resources/js/bootstrap.min.js" />" /></script>
+
+<!-- <link rel="stylesheet" href="/resources/css/bootstrap.css"> -->
+<!-- <script type="" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+<!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+
 
 </head>
 <body>
 
 <br>
-<div class="container">
-    <img src="<c:url value="/resources/images/logo3.png" />" height="100" width="100"> <h1>Regalo</h1>
-    <p><I>Online portal for gifts!</I></p>
+<div style= "width:100% height:20%">
+<table>
+<tr>
+<td>
+    <img src="<c:url value="/resources/images/logo3.png" />" height="100" width="100">
+    </td>
+    <td><h1><b>Regalo</b></h1>
+    <p><I>Online portal for gifts!</I></p></td>
+</table>
   </div>
+
+
+
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -70,4 +87,6 @@
 	</nav>
 
 </body>
+
+
 </html>

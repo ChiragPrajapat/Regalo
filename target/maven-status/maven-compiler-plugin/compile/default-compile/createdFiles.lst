@@ -1,7 +1,6 @@
 com\niit\regalo\service\ProductServiceImpl.class
-com\niit\regalo\model\ProductModel.class
-com\niit\regalo\dao\ProductDAOImpl.class
-com\niit\regalo\dao\ProductDAO.class
 com\niit\regalo\controller\RegaloController.class
 com\niit\regalo\service\ProductService.class
+com\niit\regalo\dao\ProductDAOImpl.class
+com\niit\regalo\dao\ProductDAO.class
 com\niit\regalo\model\Product.class

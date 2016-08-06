@@ -1,4 +1,5 @@
-	<%@ include file="header.jsp"%>
+
+<%@ include file="header.jsp"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -17,7 +18,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
- <script src="<c:url value='/resources/JS/angularJS.js'/>"></script>
+<script src="<c:url value='/resources/JS/angularJS.js'/>"></script>
 
 
 </head>
@@ -26,42 +27,48 @@
 	<div class="container">
 		<h2>Available products</h2>
 
-		<div ng-app="allProd" ng-controller="allProdCntrl">
+		<!-- 		<div ng-app="allProd" ng-controller="allProdCntrl"> -->
 
-			<div>
-				<c:set var="prd" scope="session" value="${prd}" />
-				<table class="table">
-					<thead>
-						<tr>
-							<th>Product id</th>
-							<th>Product name</th>
-							<th>Supplier</th>
-							<th>price</th>
-							<th>Description</th>
+		<c:set var="prd" scope="session" value="${prd}" />
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Product id</th>
+					<th>Product name</th>
+					<th>Supplier</th>
+					<th>price</th>
+					<th>Description</th>
 
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach items="${lists}" var="product">
-<!-- 						 <tr ng-repeat="product in Data|filter:{product_category:'birthday'}|filter:search"> -->
-						 
-							<tr>
-								<td>${product.product_id}</td>
-								<td>${product.product_name}</td>
-								<td>${product.product_supplier}</td>
-								<td>${product.product_price}</td>
-								<td>${product.product_description}</td>
-								<!-- 
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${lists}" var="product">
+					<!-- 						 <tr ng-repeat="product in Data|filter:{product_category:'birthday'}|filter:search"> -->
+
+					<tr>
+						<td>${product.product_id}</td>
+						<td>${product.product_name}</td>
+						<td>${product.product_supplier}</td>
+						<td>${product.product_price}</td>
+						<td>${product.product_description}</td>
+						<!-- 
 							<td>4{product.product_category}</td> -->
 
 
-								<td><a href="">View</a>|<a href="">Edit</a>|<a href="">Delete</a></td>
+						<td><a href="">View</a>|<a href="">Edit</a>|<a href="">Delete</a></td>
 
-							</tr>
+					</tr>
 
-						</c:forEach>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
 
 
+
+
+
+	<%-- 
 						<c:if test="${prd=='1' }">
 							<tr
 								ng-repeat="product in Data|filter:{product_category:'birthday'}|filter:search">
@@ -127,10 +134,10 @@
 					</tbody>
 				</table>
 			</div>
+ --%>
 
 
-
-			<%-- <c:if test="${not empty lists}">
+	<%-- <c:if test="${not empty lists}">
 
 		<ul>
 			<c:forEach var="listValue" items="${lists}">

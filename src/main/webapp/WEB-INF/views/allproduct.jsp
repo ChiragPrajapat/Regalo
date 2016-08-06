@@ -38,6 +38,7 @@
 					<th>Supplier</th>
 					<th>price</th>
 					<th>Description</th>
+					<th>Category</th>
 
 				</tr>
 			</thead>
@@ -51,11 +52,10 @@
 						<td>${product.product_supplier}</td>
 						<td>${product.product_price}</td>
 						<td>${product.product_description}</td>
-						<!-- 
-							<td>4{product.product_category}</td> -->
+							<td>${product.product_category}</td>
 
 
-						<td><a href="">View</a>|<a href="">Edit</a>|<a href="">Delete</a></td>
+						<td><a href="getProduct/{product.product_id}">View</a>|<a href="updateProduct">Edit</a>|<a href="deleteProduct/{product.product_id}">Delete</a></td>
 
 					</tr>
 
