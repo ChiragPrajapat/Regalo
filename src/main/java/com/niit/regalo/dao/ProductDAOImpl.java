@@ -10,69 +10,78 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.regalo.model.Product;
+
 @Repository
-	public class ProductDAOImpl implements ProductDAO {
-		
-//		private static final Logger logger = LoggerFactory.getLogger(ProductDAOImpl.class);
-		@Autowired 
-		private SessionFactory sessionFactory;
-		
-		public void setSessionFactory(SessionFactory sf){
-			this.sessionFactory = sf;
-		}
+public class ProductDAOImpl implements ProductDAO {
 
-		@Override
-		@Transactional
-		public void addProduct(Product p) {
-			Session session = this.sessionFactory.openSession();
-			Transaction tx=session.beginTransaction();
-			session.save(p);
-			tx.commit();
-			session.close();
-//			logger.info("Product saved successfully, Product Details="+p);
-		}
+	// private static final Logger logger =
+	// LoggerFactory.getLogger(ProductDAOImpl.class);
+	@Autowired
+	private SessionFactory sessionFactory;
 
-		@Override
-		@Transactional
-		public void updateProduct(Product p) {
-			Session session = this.sessionFactory.openSession();
-			Transaction tx = session.beginTransaction();
-			session.update(p);
-			tx.commit();
-			session.close();
-//			logger.info("Product updated successfully, Product Details="+p);
-		}
+	/*
+	 * public void setSessionFactory(SessionFactory sf){ this.sessionFactory =
+	 * sf; }
+	 */
 
-		@SuppressWarnings("unchecked")
-		@Override
-		@Transactional
-		public List<Product> listProducts() {
-			Session session = this.sessionFactory.openSession();
-			List<Product> productsList = session.createQuery("from Product").list();
-//			for(Product p : productsList){
-////				logger.info("Product List::"+p);
-//			}			
-			return productsList;
-		}
-
-		@Override
-		@Transactional
-		public Product getProductById(int id) {
-			Session session = this.sessionFactory.openSession();		
-			Product p = (Product) session.load(Product.class, new Integer(id));
-//			logger.info("Product loaded successfully, Product details="+p);
-			return p;
-		}
-
-		@Override
-		@Transactional
-		public void removeProduct(int id) {
-			Session session = this.sessionFactory.openSession();
-			Product p = (Product) session.load(Product.class, new Integer(id));
-			if(null != p){
-				session.delete(p);
-			}
-//			logger.info("Product deleted successfully, product details="+p);
-		}
-
+	@Transactional
+	public void addProduct(Product p) {
+		Session session = this.sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		session.save(p);
+		tx.commit();
+		session.close();
+		// logger.info("Product saved successfully, Product Details="+p);
 	}
+
+	@Transactional
+	public void updateProduct(Product p) {
+		Session session = this.sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		session.update(p);
+		tx.commit();
+		session.close();
+		// logger.info("Product updated successfully, Product Details="+p);
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Product> listProduct() {
+		Session session = sessionFactory.openSession();
+
+		@SuppressWarnings("deprecation")
+		List<Product> productList = session.createQuery("from Product").list();
+		session.close();
+		return productList;
+	}
+
+	public Product getProductByProduct_Id(int id) {
+		Session session = this.sessionFactory.openSession();
+		Product p = (Product) session.load(Product.class, new Integer(id));
+		// logger.info("Product loaded successfully, Product details="+p);
+		return p;
+	}
+
+	@Transactional
+	public void removeProduct(int id) {
+		Session session = this.sessionFactory.openSession();
+		Product p = (Product) session.load(Product.class, new Integer(id));
+		Transaction tx = session.beginTransaction();
+		if (null != p) {
+			session.delete(p);
+		}
+		// logger.info("Product deleted successfully, product details="+p);
+		tx.commit();
+		session.close();
+	}
+
+	@Override
+	public List<Product> listProducts() {
+		Session session = sessionFactory.openSession();
+
+		@SuppressWarnings("deprecation")
+		List<Product> productList = session.createQuery("from Product").list();
+		session.close();
+		return productList;
+	}
+
+}

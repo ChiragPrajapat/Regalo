@@ -34,28 +34,18 @@ public class ProductServiceImpl implements ProductService {
 	public List<Product> listProducts() {
 		return this.productDao.listProducts();
 	}
+
+	
 	@Transactional
-	public Product getProductById(int id) {
-		return this.productDao.getProductById(id);
+	public void removeProduct(int product_id) {
+		this.productDao.removeProduct(product_id);
 	}
+
 
 	@Transactional
-	public void removeProduct(int id) {
-		this.productDao.removeProduct(id);
-	}
-
-
-	@Override
-	public Product getProductByProduct_Id(String product_id) {
+	public Product getProductByProduct_Id(int product_id) {
 		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public void removeProduct(String product_id) {
-		// TODO Auto-generated method stub
-		
+		return this.productDao.getProductByProduct_Id(product_id);
 	}
 
 

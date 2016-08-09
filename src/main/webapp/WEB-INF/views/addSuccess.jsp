@@ -10,6 +10,6 @@
 <body>
 <h1>Gift updated successfully</h1>
 <h3>
-<a href="allproduct"> Show me list</a></h3>
+<a href="disp?id=4"> Show me list</a></h3>
 </body>
 </html>

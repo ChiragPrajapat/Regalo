@@ -9,6 +9,6 @@ public interface ProductDAO {
 		public void addProduct(Product p);
 		public void updateProduct(Product p);
 		public List<Product> listProducts();
-		public Product getProductById(int id);
-		public void removeProduct(int id);
+		public Product getProductByProduct_Id(int product_id);
+		public void removeProduct(int product_id);
 	}
