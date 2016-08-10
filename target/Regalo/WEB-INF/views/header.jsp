@@ -18,12 +18,23 @@
 <script type="text/javascript" src="<spring:url value="/resources/js/respond.min.js" />" /></script>
 <script type="text/javascript" src="<spring:url value="/resources/jquery/jquery-2.2.4.min.js"/>" /></script>
 <script type="text/javascript" src="<spring:url value="/resources/js/bootstrap.min.js" />" /></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="<c:url value='/resources/js/AngularjsController.js'/>"></script>
 
 <!-- <link rel="stylesheet" href="/resources/css/bootstrap.css"> -->
 <!-- <script type="" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
 <!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
-
-
+<style>
+body {
+    font-family: Georgia, Times, serif;
+    color: purple;
+    background-color: #d8da3d
+}
+h1 {
+    font-family: Helvetica, Arial
+}
+</style>
 </head>
 <body>
 
@@ -61,7 +72,7 @@
 				<!--       </li> -->
 
 
-				<li><a href="allproduct">Products</a></li>
+				<li><a href="disp?id=4">Products</a></li>
 				
 	<li><a href="addproduct">Add Product</a></li>
 			

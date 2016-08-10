@@ -3,6 +3,8 @@ package com.niit.regalo.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -16,8 +18,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.niit.regalo.FileUtil;
 import com.niit.regalo.model.Product;
 import com.niit.regalo.service.ProductService;
 
@@ -129,7 +133,7 @@ public class RegaloController {
 
 	
 	@RequestMapping(value="/addproduct" , method=RequestMethod.POST)
-	public String addData(@ModelAttribute("addproduct") Product p,BindingResult result, Model model) {
+	public String addData(@Valid @ModelAttribute("addproduct") Product p,BindingResult result,@RequestParam(value = "image", required = false) MultipartFile image, Model model) {
 
 		//List<Product> list =  pmd.getAllProduct();
 		System.out.println("post method addproduct");
@@ -139,7 +143,9 @@ if (result.hasErrors()) {
 			return "addproduct";
 		}
 		else{
-			
+			MultipartFile file =p.getImage();
+			String path= "E:"+ \ +"DT\Demo\Regalo\src\main\webapp\resources\images";
+			FileUtil.upload(path , file, p.getProduct_id()+".jpg");
 				productService.addProduct(p);
 		return "addSuccess";
 		}
@@ -181,7 +187,7 @@ if (result.hasErrors()) {
 	
 	
 	@RequestMapping(value="/updateProduct", method=RequestMethod.POST )
-	public String EditActionPage(@ModelAttribute("product") Product p, BindingResult result, Model model)
+	public String EditActionPage(@Valid @ModelAttribute("product") Product p, BindingResult result, Model model)
 	{
 		
 if (result.hasErrors()) {

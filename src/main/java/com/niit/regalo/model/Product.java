@@ -4,18 +4,41 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 public class Product {
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private int product_id;
+	 @NotEmpty(message="Name should not be empty")
 	private String product_name;
+	 @NotEmpty(message="Supplier should not be empty")
 	private String product_supplier;
+	 @NotNull
+	@Min(1)
 	private int product_price;
+	
 	private String product_description;
+	 @NotEmpty
 	private String product_category;
+	 
+	
+	 @Transient
+	 private MultipartFile image;
 
+	 
+	public MultipartFile getImage() {
+		return image;
+	}
+	public void setImage(MultipartFile image) {
+		this.image = image;
+	}
 	public Product()
 	{
 		
