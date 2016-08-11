@@ -11,7 +11,10 @@ public interface ProductService {
 		public List<Product> listProducts();
 		public Product getProductByProduct_Id(int product_id);
 		public void removeProduct(int product_id);
-		
+		public static void storeFile(Product p) {
+			// TODO Auto-generated method stub
+			
+		}
 	}
 
 	

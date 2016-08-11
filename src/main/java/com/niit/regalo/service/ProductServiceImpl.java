@@ -47,6 +47,9 @@ public class ProductServiceImpl implements ProductService {
 		// TODO Auto-generated method stub
 		return this.productDao.getProductByProduct_Id(product_id);
 	}
-
+	public void storeFile(Product p)
+	{
+		productDao.storeFile(p);
+	}
 
 }

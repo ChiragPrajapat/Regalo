@@ -27,9 +27,10 @@
 <!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
 <style>
 body {
-    font-family: Georgia, Times, serif;
-    color: purple;
-    background-color: #d8da3d
+    font-family: Georgia, Times, serif , Fantasy;
+    font-size: 160%;
+    color: Red;
+    background-color: DodgerBlue
 }
 h1 {
     font-family: Helvetica, Arial

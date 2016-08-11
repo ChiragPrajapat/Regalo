@@ -143,10 +143,9 @@ if (result.hasErrors()) {
 			return "addproduct";
 		}
 		else{
-			MultipartFile file =p.getImage();
-			String path= "E:"+ \ +"DT\Demo\Regalo\src\main\webapp\resources\images";
-			FileUtil.upload(path , file, p.getProduct_id()+".jpg");
-				productService.addProduct(p);
+			p.setImage(p.getFile().getOriginalFilename());
+			ProductService.storeFile(p);
+			productService.addProduct(p);
 		return "addSuccess";
 		}
 		
@@ -189,13 +188,15 @@ if (result.hasErrors()) {
 	@RequestMapping(value="/updateProduct", method=RequestMethod.POST )
 	public String EditActionPage(@Valid @ModelAttribute("product") Product p, BindingResult result, Model model)
 	{
-		
+		System.out.println("post method addproduct");
 if (result.hasErrors()) {
 			
 			return "updateProduct";
 		}
 		
 else{
+		p.setImage(p.getFile().getOriginalFilename());
+		ProductService.storeFile(p);
 			productService.updateProduct(p);
 			return "allproduct";
 		}

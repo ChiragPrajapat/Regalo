@@ -71,7 +71,8 @@
 	<div class="container" ng-app="myApp" ng-controller="myCtrl">
 		<c:set var="product_id" value="${param.id}"></c:set>
 
-		<table>
+ 
+  <table class="table table-striped">
 		
 		<thead>
 			<tr>

@@ -1,5 +1,8 @@
 package com.niit.regalo.dao;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -8,6 +11,7 @@ import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.niit.regalo.model.Product;
 
@@ -83,5 +87,30 @@ public class ProductDAOImpl implements ProductDAO {
 		session.close();
 		return productList;
 	}
-
+	
+	public void storeFile(Product p) 	{
+		 
+		MultipartFile file= p.getFile();
+	
+		if (!file.isEmpty()) {
+			
+		try{
+		byte[] bytes =file.getBytes();
+		System.out.println(file.getOriginalFilename());
+		
+		
+		File serverFile = new File("E:/DT/Demo/Regalo/"+p.getProduct_category()+"/"+p.getImage());
+		serverFile.createNewFile();
+		BufferedOutputStream stream = new BufferedOutputStream(
+				new FileOutputStream(serverFile));
+		stream.write(bytes);
+		stream.close();
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex);
+		}
+			
+	}	
+		}
 }

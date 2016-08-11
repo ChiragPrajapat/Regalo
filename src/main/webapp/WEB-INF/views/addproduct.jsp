@@ -14,7 +14,7 @@
 <script src="<c:url value='/resources/js/AngularjsController.js'/>"></script>
 <style>
 .error {
-	color: #ff0000;
+	color: red;
 	font-style: italic;
 	font-weight: bold;
 }
@@ -58,7 +58,9 @@
 				<td><form:input path="product_description" /></td>
 			</tr>
 			<tr>
-				<td>Category:</td>
+				<td><form:label path="product_category">
+						<spring:message text="Category" />
+					</form:label></td>
 				<td><form:select path="product_category">
 						<form:option value="" label="Select Category" />
 						<form:option value="Birthday" label="Birthday" />
@@ -68,7 +70,10 @@
 				<td><form:errors path="product_category" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td>Browse:<input type="file" name="file" multiple="multiple">
+				<td><form:label path="file">
+						<spring:message text="Image" />
+					</form:label></td>
+				<td><form:input type="file" path="file" multiple="multiple" />
 				</td>
 			</tr>
 			<tr>

@@ -11,29 +11,29 @@
 <title>Regalo :: Update Product</title>
 </head>
 <body>
-	<form:form modelAttribute="product" role="form" action="updateProduct" >
-		<form:input style="visibility:hidden;" path="product_id"/>
+	<form:form modelAttribute="product" role="form" action="updateProduct">
+		<form:input style="visibility:hidden;" path="product_id" />
 		<table>
 			<tr>
 				<td><form:label path="product_name">
 						<spring:message text="Product name" />
 					</form:label></td>
 				<td><form:input path="product_name" /></td>
-				<td><form:errors path="product_name" cssClass="error"/></td>
+				<td><form:errors path="product_name" cssClass="error" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="product_supplier">
 						<spring:message text="product supplier" />
 					</form:label></td>
 				<td><form:input path="product_supplier" /></td>
-				<td><form:errors path="product_supplier" cssClass="error"/></td>
+				<td><form:errors path="product_supplier" cssClass="error" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="product_price">
 						<spring:message text="Product price" />
 					</form:label></td>
 				<td><form:input path="product_price" /></td>
-				<td><form:errors path="product_price" cssClass="error"/></td>
+				<td><form:errors path="product_price" cssClass="error" /></td>
 			</tr>
 
 			<tr>
@@ -42,17 +42,10 @@
 					</form:label></td>
 				<td><form:input path="product_description" /></td>
 			</tr>
-
-	<%-- 		<tr>
+			<tr>
 				<td><form:label path="product_category">
-						<spring:message text="Product category" />
-					</form:label>
-				</td>
-
-				<td><form:input path="product_category" /></td>
-			</tr> --%>
-<tr>
-				<td>Category:</td>
+						<spring:message text="Category" />
+					</form:label></td>
 				<td><form:select path="product_category">
 						<form:option value="" label="Select Category" />
 						<form:option value="Birthday" label="Birthday" />
@@ -62,8 +55,14 @@
 				<td><form:errors path="product_category" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td colspan="2">
-				<input type="submit" value="Update" /></td>
+				<td><form:label path="file">
+						<spring:message text="Image" />
+					</form:label></td>
+				<td><form:input type="file" path="file" multiple="multiple" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="Update" /></td>
 			</tr>
 		</table>
 	</form:form>

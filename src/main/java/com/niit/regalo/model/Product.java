@@ -1,5 +1,6 @@
 package com.niit.regalo.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,35 +15,32 @@ import org.springframework.web.multipart.MultipartFile;
 @Entity
 public class Product {
 	@Id
-	@GeneratedValue(strategy= GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int product_id;
-	 @NotEmpty(message="Name should not be empty")
+	@NotEmpty(message = "Name should not be empty")
 	private String product_name;
-	 @NotEmpty(message="Supplier should not be empty")
+	@NotEmpty(message = "Supplier should not be empty")
 	private String product_supplier;
-	 @NotNull
+	@NotNull
 	@Min(1)
 	private int product_price;
-	
-	private String product_description;
-	 @NotEmpty
-	private String product_category;
-	 
-	
-	 @Transient
-	 private MultipartFile image;
 
-	 
-	public MultipartFile getImage() {
-		return image;
+	private String product_description;
+	@NotEmpty
+	private String product_category;
+
+	@Column(name = "ImagePath")
+	private String image;
+
+	@Transient
+	private MultipartFile file;
+@Transient
+	private MultipartFile storeFile;
+	
+	public Product() {
+
 	}
-	public void setImage(MultipartFile image) {
-		this.image = image;
-	}
-	public Product()
-	{
-		
-	}
+
 	public Product(int product_id, String product_name, String product_supplier, int product_price,
 			String product_description, String product_category) {
 		super();
@@ -102,10 +100,24 @@ public class Product {
 		this.product_price = product_price;
 	}
 
-	public String toString()
-	{
-		return product_id + " " + product_name; 
+	public String toString() {
+		return product_id + " " + product_name;
 	}
-	
-	
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public MultipartFile getFile() {
+		return file;
+	}
+
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	}
+
 }
