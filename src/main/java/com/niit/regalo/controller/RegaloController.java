@@ -1,19 +1,13 @@
 package com.niit.regalo.controller;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,7 +15,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.niit.regalo.FileUtil;
 import com.niit.regalo.model.Product;
 import com.niit.regalo.service.ProductService;
 
@@ -36,18 +29,12 @@ public class RegaloController {
 		System.out.println("coming to controller and return index");
 		return "index";
 	}
-
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String LoginPage() {
-
-		return "login";
-	}
-
-	@RequestMapping(value = "/register")
-	public String RegisterPage() {
-
-		return "register";
-	}
+//
+//	@RequestMapping(value = "/login", method = RequestMethod.GET)
+//	public String LoginPage() {
+//
+//		return "login";
+//	}
 
 	@RequestMapping("/aboutus")
 	public String AboutUsPage() {
@@ -146,10 +133,12 @@ if (result.hasErrors()) {
 			p.setImage(p.getFile().getOriginalFilename());
 			ProductService.storeFile(p);
 			productService.addProduct(p);
-		return "addSuccess";
+		return "productAdded";
 		}
 		
 	}
+	
+	
 	
 	@RequestMapping(value="/details", method=RequestMethod.GET )
 	public String DetailsPage()

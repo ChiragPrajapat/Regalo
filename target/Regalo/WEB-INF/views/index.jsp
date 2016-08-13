@@ -26,9 +26,9 @@
 </style>
 </head>
 
-
-
 <body>
+
+
 <div class="container" ng-app="myapp" ng-controller="myctrl">
 	<%@ include file="header.jsp"%>
 

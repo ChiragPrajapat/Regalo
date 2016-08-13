@@ -26,11 +26,13 @@
 <!-- <script type="" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
 <!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
 <style>
+    
 body {
     font-family: Georgia, Times, serif , Fantasy;
     font-size: 160%;
     color: Red;
-    background-color: DodgerBlue
+    background-color: 
+/*     background-image: url("C:\Users\Dell\Desktop\gifts images\background image.jpg"); */
 }
 h1 {
     font-family: Helvetica, Arial
@@ -60,7 +62,7 @@ h1 {
 					class="glyphicon glyphicon-gift"></span> Regalo</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="/Regalo"><span
+				<li><a href="/Regalo"><span
 						class="glyphicon glyphicon-home"></span> Home</a></li>
 
 
@@ -74,9 +76,11 @@ h1 {
 
 
 				<li><a href="disp?id=4">Products</a></li>
-				
+<sec:authorize access="hasRole('ROLE_ADMIN')">				
 	<li><a href="addproduct">Add Product</a></li>
-			
+			<li><a href="supdisp">Suppliers</a></li>
+			<li><a href="catdisp">Category</a></li>
+			</sec:authorize>
 				<li><a href="aboutus">About Us</a></li>
 
 				<li><a href="contactus">Contact Us</a></li>
@@ -90,7 +94,7 @@ h1 {
 						<button type="submit" class="btn btn-default"><span
 						class="glyphicon glyphicon-search"></span></button>
 					</form:form>
-				<li><a href="register"><span
+				<li><a href="addUser"><span
 						class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 				<li><a href="login"><span
 						class="glyphicon glyphicon-log-in"></span> Login</a></li>

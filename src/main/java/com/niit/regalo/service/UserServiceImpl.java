@@ -1,6 +1,5 @@
 package com.niit.regalo.service;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,18 +19,14 @@ public class UserServiceImpl implements UserService {
 	}*/
 
 	@Transactional
-	public void addUser(User p) {
-		this.userDao.addUser(p);
+	public void addUser(User u) {
+		this.userDao.addUser(u);
 	}
 
-		@Transactional
-	public List<User> listUsers() {
-		return this.userDao.listUsers();
-	}
+
+}
+	
+
 
 	
-	@Transactional
-	public void removeUser(int user_id) {
-		this.userDao.removeUser(user_id);
-	}
-}
+

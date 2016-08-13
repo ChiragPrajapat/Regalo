@@ -25,50 +25,17 @@ public class UserDAOImpl implements UserDAO {
 	 */
 
 	@Transactional
-	public void addUser(User p) {
+	public void addUser(User u) {
 		Session session = this.sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
-		session.save(p);
+		session.save(u);
 		tx.commit();
 		session.close();
 		// logger.info("User saved successfully, User Details="+p);
 	}
 
 
-	@SuppressWarnings("unchecked")
-	public List<User> listUser() {
-		Session session = sessionFactory.openSession();
-
-		@SuppressWarnings("deprecation")
-		List<User> userList = session.createQuery("from User").list();
-		session.close();
-		return userList;
-	}
-
-
-	@Transactional
-	public void removeUser(int id) {
-		Session session = this.sessionFactory.openSession();
-		User p = (User) session.load(User.class, new Integer(id));
-		Transaction tx = session.beginTransaction();
-		if (null != p) {
-			session.delete(p);
-		}
-		// logger.info("User deleted successfully, user details="+p);
-		tx.commit();
-		session.close();
-	}
-
-	@Override
-	public List<User> listUsers() {
-		Session session = sessionFactory.openSession();
-
-		@SuppressWarnings("deprecation")
-		List<User> userList = session.createQuery("from User").list();
-		session.close();
-		return userList;
-	}
-
+	
 
 			
 		}

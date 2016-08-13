@@ -17,7 +17,7 @@
 <body>
 <div class="container">
 <%@ include file="header.jsp" %>
- <h3>Are you sure , you want to delete this product?</h3>
+ <h3>Are you sure , you want to delete ?</h3>
 <div class="row">
 <div class="col-sm-6">
 <form action="deleteProduct" method="post" role="form">
@@ -27,7 +27,7 @@
  </form>
  </div>
 <div class="col-sm-6">
-<form action="disp?id=4" method="get" role="form">
+<form action="supdisp?id=4" method="get" role="form">
     <input type="submit" value="Cancel" class="btn btn-info" />
  </form>
  </div>

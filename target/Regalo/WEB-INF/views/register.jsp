@@ -1,83 +1,97 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<title>Regalo</title>
-<meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<title>User Registration</title>
 <script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="<c:url value='/resources/js/AngularjsController.js'/>"></script>
+<style>
+.error {
+	color: red;
+	font-style: italic;
+	font-weight: bold;
+}
+</style>
 </head>
 <body>
-<%@ include file="header.jsp" %>
+	<%@ include file="header.jsp"%>
 
 
-	<h1>Not yet Registered ?? Register Now</h1>
-
-	<h4>Please fill the details</h4>
+	<h1>User Registration</h1>
 	<div class="container">
-		
-		<form:form action="../register" method="post" commandName=" ">
-
-			<table>
+		<form:form method="post" commandName="adduser"
+			enctype="/form-data" action="register">
+			<table class="table table-striped">
 				<tr>
-					<td><div class="form group">
-							<label for="name"> Name:</label> 
-							<input type="text"
-								class="form-control" name= "name" id="fname" placeholder="Name"
-								required >
-						</div></td>
+					<td><form:label path="user_firstname">
+							<spring:message text="First Name" />
+						</form:label></td>
+					<td><form:input path="user_firstname" /></td>
+					<td><form:errors path="user_firstname" cssClass="error" /></td>
 				</tr>
 				<tr>
-					<td>
-						<div class="form group">
-							<label for="password"> Password:</label> 
-							<input type="password"
-								class="form-control" id="pwd">
-						</div>
-					</td>
-				<tr>
-					<td><div class="form group">
-							<label for="tel"> Contact number</label> <input type="tel"
-								class="form-control" id="tel" placeholder="contact number">
-						</div></td>
+					<td><form:label path="user_lastname">
+							<spring:message text="Last Name" />
+						</form:label></td>
+					<td><form:input path="user_lastname" /></td>
+					<td><form:errors path="user_lastname" cssClass="error" /></td>
 				</tr>
 
 				<tr>
-					<td><div class="form group">
-							<label for="email"> Email:</label> <input type="email"
-								class="form-control" id="email" placeholder="Email">
-						</div></td>
+					<td><form:label path="user_username">
+							<spring:message text="User Name " />
+						</form:label></td>
+					<td><form:input path="user_username" /></td>
+					<td><form:errors path="user_username" cssClass="error" /></td>
 				</tr>
 				<tr>
-					<td>
-						<div class="form group">
-							<label for="text"> Address:</label> <input type="text" width="20"
-								height="10" name="address" class="form-control" id="address"
-								placeholder="Last Name">
-						</div>
-					</td>
+					<td><form:label path="user_password">
+							<spring:message text="Password " />
+						</form:label></td>
+					<td><form:input path="user_password" /></td>
+					<td><form:errors path="user_password" cssClass="error" /></td>
 				</tr>
-
+				<tr>
+					<td><form:label path="user_address">
+							<spring:message text="Address" />
+						</form:label></td>
+				
+					<td><form:input path="user_address" /></td>
+					<td><form:errors path="user_address" cssClass="error" /></td>
+				</tr>
+				<tr>
+					<td><form:label path="user_email">
+							<spring:message text="Email" />
+						</form:label></td>
+					<td><form:input path="user_email" /></td>
+					<td><form:errors path="user_email" cssClass="error" /></td>
+				</tr>
+				<tr>
+					<td><form:label path="user_gender">
+							<spring:message text="Gender" />
+						</form:label></td>
+					<td><form:radiobutton path="user_gender" value=" M" label=" M"/>
+					<form:radiobutton path="user_gender" value=" F" label=" F"/></td>
+				</tr>
+				<tr>
+					<td><form:label path="user_contact">
+							<spring:message text="Contact" />
+						</form:label></td>
+					<td><form:input path="user_contact" /></td>
+					<td><form:errors path="user_contact" cssClass="error" /></td>
+				</tr>
+				
+				<tr>
+					<td colspan="2"><input type="submit" value="Sign Up" /></td>
+				</tr>
 			</table>
-			<br>
-			<br>
-
-			<input type="submit" value="Register">
-			<input type="reset" value="Reset">
-
-
-
 		</form:form>
 	</div>
 </body>

@@ -24,7 +24,7 @@
 
 	<form:form method="post" commandName="addproduct"
 		enctype="multipart/form-data" action="addproduct">
-		<table>
+		<table class="table table-striped">
 			<%-- <tr>
            <td><form:label path="product_id">Product ID:</form:label></td>
            <td><form:input path="product_id" value="${product.product_id}" /></td>

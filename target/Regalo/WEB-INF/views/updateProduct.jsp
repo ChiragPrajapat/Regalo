@@ -11,7 +11,7 @@
 <title>Regalo :: Update Product</title>
 </head>
 <body>
-	<form:form modelAttribute="product" role="form" action="updateProduct">
+	<form:form modelAttribute="product" role="form" action="updateProduct" method="post">
 		<form:input style="visibility:hidden;" path="product_id" />
 		<table>
 			<tr>

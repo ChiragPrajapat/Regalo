@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.regalo.dao.SupplierDAO;
 import com.niit.regalo.model.Supplier;
+import com.niit.regalo.model.Supplier;
 
 @Service
 @Transactional
@@ -20,14 +21,20 @@ public class SupplierServiceImpl implements SupplierService {
 	}*/
 
 	@Transactional
-	public void addSupplier(Supplier p) {
-		this.supplierDao.addSupplier(p);
+	public void addSupplier(Supplier s) {
+		this.supplierDao.addSupplier(s);
 	}
 
+
+	@Transactional
+	public Supplier getSupplierBySupplier_Id(int supplier_id) {
+		// TODO Auto-generated method stub
+		return this.supplierDao.getSupplierBySupplier_Id(supplier_id);
+	}
 	
 	@Transactional
-	public void updateSupplier(Supplier p) {
-		this.supplierDao.updateSupplier(p);
+	public void updateSupplier(Supplier s) {
+		this.supplierDao.updateSupplier(s);
 	}
 
 		@Transactional

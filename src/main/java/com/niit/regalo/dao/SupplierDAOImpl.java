@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.regalo.model.Supplier;
+import com.niit.regalo.model.Supplier;
 
 @Repository
 public class SupplierDAOImpl implements SupplierDAO {
@@ -26,27 +27,35 @@ public class SupplierDAOImpl implements SupplierDAO {
 	 */
 
 	@Transactional
-	public void addSupplier(Supplier p) {
+	public void addSupplier(Supplier s) {
 		Session session = this.sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
-		session.save(p);
+		session.save(s);
 		tx.commit();
 		session.close();
 		// logger.info("Supplier saved successfully, Supplier Details="+p);
 	}
 
 	@Transactional
-	public void updateSupplier(Supplier p) {
+	public void updateSupplier(Supplier s) {
 		Session session = this.sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
-		session.update(p);
+		session.update(s);
 		tx.commit();
 		session.close();
 		// logger.info("Supplier updated successfully, Supplier Details="+p);
 	}
 
+	public Supplier getSupplierBySupplier_Id(int id) {
+		Session session = this.sessionFactory.openSession();
+		Supplier s = (Supplier) session.load(Supplier.class, new Integer(id));
+		// logger.info("Supplier loaded successfully, Supplier details="+p);
+		return s;
+	}
+
+	
 	@SuppressWarnings("unchecked")
-	public List<Supplier> listSupplier() {
+	public List<Supplier> listSuppliers() {
 		Session session = sessionFactory.openSession();
 
 		@SuppressWarnings("deprecation")
@@ -58,24 +67,15 @@ public class SupplierDAOImpl implements SupplierDAO {
 	@Transactional
 	public void removeSupplier(int id) {
 		Session session = this.sessionFactory.openSession();
-		Supplier p = (Supplier) session.load(Supplier.class, new Integer(id));
+		Supplier s = (Supplier) session.load(Supplier.class, new Integer(id));
 		Transaction tx = session.beginTransaction();
-		if (null != p) {
-			session.delete(p);
+		if (null != s) {
+			session.delete(s);
 		}
 		// logger.info("Supplier deleted successfully, supplier details="+p);
 		tx.commit();
 		session.close();
 	}
 
-	@Override
-	public List<Supplier> listSuppliers() {
-		Session session = sessionFactory.openSession();
-
-		@SuppressWarnings("deprecation")
-		List<Supplier> supplierList = session.createQuery("from Supplier").list();
-		session.close();
-		return supplierList;
-	}
-
+	
 }
