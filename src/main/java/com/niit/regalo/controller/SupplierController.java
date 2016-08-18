@@ -15,14 +15,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.niit.regalo.dao.SupplierDAO;
 import com.niit.regalo.model.Supplier;
 import com.niit.regalo.service.SupplierService;
 
 @Controller
 public class SupplierController {
-
 	@Autowired
 	private SupplierService supplierService;
+	
+	private Supplier supplier;
 
 //	@RequestMapping(value="/supdisp", method=RequestMethod.GET )
 //	public String SuppliersPage()
@@ -32,8 +34,6 @@ public class SupplierController {
 //		
 //		return "Suppliers";
 //	}
-	
-	
 	
 	@RequestMapping(value = "/supdisp", method = RequestMethod.GET)
 	public ModelAndView getData() {
@@ -47,11 +47,6 @@ public class SupplierController {
 		return model;
 
 	}
-	
-	
-	
-	
-	
 	
 	@RequestMapping(value = "/addsupplier", method = RequestMethod.GET)
 	public ModelAndView addDatasupplier() {
@@ -78,32 +73,13 @@ public class SupplierController {
 	}
 
 	
-	
-	
-	
-	
-	
-	
 	@RequestMapping(value = "/supdelete/{supplier_id}", method = RequestMethod.GET)
-	public String DeletePage() {
+	public String DeletePage(@PathVariable("supplier_id") int id) {
 		System.out.println("coming to controller and return delete page");
-		return "DeleteSupplier";
-	}
-
-	@RequestMapping(value = "/deleteSupplier", method = RequestMethod.POST)
-	public String DeleteActionPage(@RequestParam("id") int id) {
-
-		System.out.println("coming to controller and call remove supplier return allsupplier");
 		supplierService.removeSupplier(id);
 		return "Suppliers";
 	}
 
-	
-	
-	
-	
-	
-	
 	@RequestMapping(value = "/supedit/{supplier_id}", method = RequestMethod.GET)
 	public ModelAndView EditPage(@PathVariable("supplier_id") int id) {
 		System.out.println("coming to edit controller and return model and view update supplier");
@@ -112,8 +88,8 @@ public class SupplierController {
 		return new ModelAndView("updateSupplier", "supplier", s);
 	}
 
-	@RequestMapping(value = "updateSupplier", method = RequestMethod.POST)
-	public String EditActionPage(@Valid @ModelAttribute("supplier") Supplier s, BindingResult result, Model model) {
+	@RequestMapping(value = "/supedit/updateSupplier", method = RequestMethod.POST)
+	public String EditSupplierPage(@Valid @ModelAttribute("supplier") Supplier s, BindingResult result, Model model) {
 		System.out.println("post method updatesupplier");
 		if (result.hasErrors()) {
 
@@ -126,4 +102,32 @@ public class SupplierController {
 		}
 
 	}
+
+	
+	/*@RequestMapping("supedit/{supplier_id}")
+	public ModelAndView updateSupplier(@PathVariable ("supplier_id") int id)
+	{
+		ModelAndView mv = new ModelAndView("updateSupplier");
+		Supplier s = supplierService.getSupplierBySupplier_Id(id);
+//		mv.addObject("supplier_id", supplier.getSupplier_id());
+		mv.addObject("supplier_name", supplier.getSupplier_name());
+		mv.addObject("Address", supplier.getSupplier_address());
+		mv.addObject("supplier_email", supplier.getSupplier_email());
+		mv.addObject("supplier_contact", supplier.getSupplier_contact());
+		supplierService.removeSupplier(id);
+		mv.addObject("supplier", supplierService.listSuppliers());
+		return mv;
+	}
+	
+	
+	@RequestMapping("supdelete/{supplier_id}")
+	public ModelAndView deleteSupplier(@PathVariable ("supplier_id") int id)
+	{
+		System.out.println("hello");
+		System.out.println(id);
+		ModelAndView mv = new ModelAndView("Suppliers");
+		supplierService.removeSupplier(id);
+		mv.addObject("supplier", supplierService.listSuppliers());
+		return mv;	
+	}*/
 }

@@ -51,7 +51,7 @@
 						<td>${supplier.supplier_address}</td>
 						<td>${supplier.supplier_email}</td>
 						<td>${supplier.supplier_contact}</td>
-						<td><a href="supedit/${supplier.supplier_id} ">Edit</a>|<a href="supdelete/${supplier.supplier_id}">Delete</a></td>
+						<td><a href="${pageContext.request.contextPath}/supedit/${supplier.supplier_id} ">Edit</a>|<a href="${pageContext.request.contextPath}/supdelete/${supplier.supplier_id}">Delete</a></td>
 
 					</tr>
 

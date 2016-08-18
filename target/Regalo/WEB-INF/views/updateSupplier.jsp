@@ -11,7 +11,7 @@
 <title>Regalo :: Update Supplier</title>
 </head>
 <body>
-	<form:form modelAttribute="supplier" role="form" action="updateSupplier">
+	<form:form modelAttribute="supplier" enctype="/form-data" action="updateSupplier" method="post">
 		<form:input style="visibility:hidden;" path="supplier_id" />
 		<table class="table table-striped">
 			<tr>

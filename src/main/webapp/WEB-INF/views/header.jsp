@@ -75,12 +75,12 @@ h1 {
 				<!--       </li> -->
 
 
-				<li><a href="disp?id=4">Products</a></li>
-<sec:authorize access="hasRole('ROLE_ADMIN')">				
+				<li><a href="${pageContext.request.contextPath}/disp?id=4">Products</a></li>
+<!-- <sec:authorize access="hasRole('ROLE_ADMIN')">				 -->
 	<li><a href="addproduct">Add Product</a></li>
-			<li><a href="supdisp">Suppliers</a></li>
-			<li><a href="catdisp">Category</a></li>
-			</sec:authorize>
+			<li><a href="${pageContext.request.contextPath}/supdisp">Suppliers</a></li>
+			<li><a href="${pageContext.request.contextPath}/catdisp">Category</a></li>
+<!-- 			</sec:authorize> -->
 				<li><a href="aboutus">About Us</a></li>
 
 				<li><a href="contactus">Contact Us</a></li>

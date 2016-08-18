@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Categorys</title>
+<title>Categories</title>
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,7 +27,7 @@
 <%-- <div class="container" ng-app="myApp" ng-controller="myCtrl">
 		<c:set var="category_id" value="${param.id}"></c:set> --%>
 
- <h1>Categorys</h1>
+ <h1>Categories</h1>
  <h3><a href="addcategory">Add Category</a></h3>
  <table class="table">
 			<thead>

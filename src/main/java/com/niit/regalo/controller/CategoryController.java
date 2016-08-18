@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -67,20 +68,12 @@ public class CategoryController {
 	
 	
 	@RequestMapping(value = "/catdelete/{category_id}", method = RequestMethod.GET)
-	public String DeletePage() {
+	public String DeletePage(@PathVariable("category_id") int id) {
 		System.out.println("coming to controller and return delete page");
-		return "DeleteCategory";
-	}
-
-	@RequestMapping(value = "/deleteCategory", method = RequestMethod.POST)
-	public String DeleteActionPage(@RequestParam("id") int id) {
-
-		System.out.println("coming to controller and call remove category return allcategory");
 		categoryService.removeCategory(id);
 		return "Categorys";
 	}
 
-	
 	
 	
 	

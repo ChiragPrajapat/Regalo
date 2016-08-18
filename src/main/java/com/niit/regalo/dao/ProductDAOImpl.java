@@ -47,17 +47,7 @@ public class ProductDAOImpl implements ProductDAO {
 		session.close();
 		// logger.info("Product updated successfully, Product Details="+p);
 	}
-
-	@SuppressWarnings("unchecked")
-	public List<Product> listProduct() {
-		Session session = sessionFactory.openSession();
-
-		@SuppressWarnings("deprecation")
-		List<Product> productList = session.createQuery("from Product").list();
-		session.close();
-		return productList;
-	}
-
+	
 	public Product getProductByProduct_Id(int id) {
 		Session session = this.sessionFactory.openSession();
 		Product p = (Product) session.load(Product.class, new Integer(id));
@@ -78,7 +68,7 @@ public class ProductDAOImpl implements ProductDAO {
 		session.close();
 	}
 
-	@Override
+	@Transactional
 	public List<Product> listProducts() {
 		Session session = sessionFactory.openSession();
 

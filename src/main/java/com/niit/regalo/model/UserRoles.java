@@ -15,13 +15,12 @@ public class UserRoles {
 @Id
 @Column(name="U_id")
 @GeneratedValue(strategy = GenerationType.AUTO)
-	private int u_id;
+private int u_id;
 
 @Column(name="AUTHORITY")
 	private String authority;
 
-@ManyToOne
-@JoinColumn(name="user_id")
+@Column(name="user_id")
 	private int user_id;
 
 

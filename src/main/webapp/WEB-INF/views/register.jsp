@@ -63,7 +63,7 @@
 							<spring:message text="Address" />
 						</form:label></td>
 				
-					<td><form:input path="user_address" /></td>
+					<td><form:textarea path="user_address" rows="3"  cols="20"/></td>
 					<td><form:errors path="user_address" cssClass="error" /></td>
 				</tr>
 				<tr>

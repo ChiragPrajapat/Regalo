@@ -20,6 +20,7 @@ public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="user_id")
 	private int user_id;
 	
 //	@NotEmpty(message = "Name should not be empty")

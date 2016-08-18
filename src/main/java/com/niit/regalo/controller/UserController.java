@@ -1,17 +1,10 @@
 package com.niit.regalo.controller;
 
-import java.security.Principal;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -52,7 +45,7 @@ if (result.hasErrors()) {
 		
 }
 	
-	 @RequestMapping(value="/login", method = RequestMethod.GET)
+/*	 @RequestMapping(value="/login", method = RequestMethod.GET)
 	 public String login() {
 	 
 	  return "login";
@@ -87,6 +80,6 @@ if (result.hasErrors()) {
 	     //   System.out.println(name);
 	        return "index";
 
-	    }
+	    }*/
 	
 }
