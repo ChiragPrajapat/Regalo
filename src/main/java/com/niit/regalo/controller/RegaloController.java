@@ -29,13 +29,6 @@ public class RegaloController {
 		System.out.println("coming to controller and return index");
 		return "index";
 	}
-//
-//	@RequestMapping(value = "/login", method = RequestMethod.GET)
-//	public String LoginPage() {
-//
-//		return "login";
-//	}
-
 	@RequestMapping("/aboutus")
 	public String AboutUsPage() {
 
@@ -48,52 +41,6 @@ public class RegaloController {
 		return "contactus";
 	}
 
-/*	@RequestMapping(value = "/allproduct", method = RequestMethod.GET)
-	public ModelAndView getData() {
-
-		// List<Product> list = pmd.getAllProduct();
-		List<Product> list = productService.listProducts();
-		// return back to index.jsp
-		ModelAndView model = new ModelAndView("allproduct");
-		model.addObject("lists", list);
-
-		return model;
-
-	}
-
-
-
-	@RequestMapping(value="/updateProduct", method=RequestMethod.GET )
-	public ModelAndView EditPage(@RequestParam("id") int id)
-	{
-		
-		Product p = productService.getProductByProduct_Id(id);
-		
-		
-		return new ModelAndView("updateProduct","product",p);
-	}
-	
-	
-	@RequestMapping(value="/updateProduct", method=RequestMethod.POST )
-	public String EditActionPage(@ModelAttribute("update") Product p, BindingResult result, Model model)
-	{
-			productService.updateProduct(p);
-			return "allproduct";
-	}
-	
-*/	
-/*
-	@RequestMapping(value="/deleteProduct", method=RequestMethod.GET )
-	public String  DeletePage()
-	{
-		return "Delete";
-	}
-	@RequestMapping(value="/deleteProduct", method=RequestMethod.POST)
-	public String  DeleteActionPage(@RequestParam("product_id") int id)
-	{
-		productService.removeProduct(id);
-		return "allproduct";
-	}*/
 
 	
 	@RequestMapping(value="/disp", method=RequestMethod.GET )
@@ -278,3 +225,49 @@ else{
 	 return pmd.getAllProduct();
 	}
 */
+/*	@RequestMapping(value = "/allproduct", method = RequestMethod.GET)
+public ModelAndView getData() {
+
+	// List<Product> list = pmd.getAllProduct();
+	List<Product> list = productService.listProducts();
+	// return back to index.jsp
+	ModelAndView model = new ModelAndView("allproduct");
+	model.addObject("lists", list);
+
+	return model;
+
+}
+
+
+
+@RequestMapping(value="/updateProduct", method=RequestMethod.GET )
+public ModelAndView EditPage(@RequestParam("id") int id)
+{
+	
+	Product p = productService.getProductByProduct_Id(id);
+	
+	
+	return new ModelAndView("updateProduct","product",p);
+}
+
+
+@RequestMapping(value="/updateProduct", method=RequestMethod.POST )
+public String EditActionPage(@ModelAttribute("update") Product p, BindingResult result, Model model)
+{
+		productService.updateProduct(p);
+		return "allproduct";
+}
+
+*/	
+/*
+@RequestMapping(value="/deleteProduct", method=RequestMethod.GET )
+public String  DeletePage()
+{
+	return "Delete";
+}
+@RequestMapping(value="/deleteProduct", method=RequestMethod.POST)
+public String  DeleteActionPage(@RequestParam("product_id") int id)
+{
+	productService.removeProduct(id);
+	return "allproduct";
+}*/

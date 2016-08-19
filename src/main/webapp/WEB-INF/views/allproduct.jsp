@@ -68,9 +68,15 @@
  --%>
 
 
-	<div class="container" ng-app="myApp" ng-controller="myCtrl">
-		<c:set var="product_id" value="${param.id}"></c:set>
 
+	<div class="panel panel-primary" ng-app="myApp" ng-controller="myCtrl">
+	<div class="panel-heading">
+	<h3 class="panel-title">Products</h3>
+	</div>
+	
+		<c:set var="product_id" value="${param.id}"></c:set>
+<div class="panel-body">
+  
  
   <table class="table table-striped">
 		
@@ -173,8 +179,7 @@
 			
 		</table>
 	</div>
-
-
+</div>
 
 	<%-- <c:if test="${not empty lists}">
 

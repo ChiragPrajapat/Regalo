@@ -19,21 +19,22 @@ public class Supplier {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "Id")
 	private int supplier_id;
+	
 	@Column(name = "Name")
-//	@NotEmpty(message = "Name should not be empty")
+	@NotEmpty(message = "Name should not be empty")
 	private String supplier_name;
 
 	@Column(name = "Address")
-//	@NotEmpty(message = "address should not be empty")
+	@NotEmpty(message = "address should not be empty")
 	private String supplier_address;
 	@Column(name = "Email")
-//
-//	@NotEmpty(message = "Email address should not be empty")
-//	@Email(message = "Enter Valid Email address")
+
+	@NotEmpty(message = "Email address should not be empty")
+	@Email(message = "Enter Valid Email address")
 	private String supplier_email;
 	@Column(name = "Contact")
-//	@NotNull
-//	@Min(1)
+	@NotNull
+	@Min(1)
 	private String supplier_contact;
 	
 	public int getSupplier_id() {

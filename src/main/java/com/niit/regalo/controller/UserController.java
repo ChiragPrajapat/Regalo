@@ -1,10 +1,18 @@
 package com.niit.regalo.controller;
 
 
+import java.security.Principal;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +29,7 @@ public class UserController {
 	private UserService userService;
 	
 	
-	@RequestMapping(value = "/addUser", method = RequestMethod.GET)
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public ModelAndView addData() {
 		System.out.println("adduser page display");
 		return new ModelAndView("register", "adduser", new User());
@@ -45,7 +53,8 @@ if (result.hasErrors()) {
 		
 }
 	
-/*	 @RequestMapping(value="/login", method = RequestMethod.GET)
+	
+	 @RequestMapping(value="/login", method = RequestMethod.GET)
 	 public String login() {
 	 
 	  return "login";
@@ -58,9 +67,7 @@ if (result.hasErrors()) {
 	
 	  return new ModelAndView("login","error",true);
 	 
-	 }
-
-	
+	 }	
 	 @RequestMapping(value="/logout", method = RequestMethod.GET)
 	 public ModelAndView logout(HttpServletRequest request,HttpServletResponse response)
 	 {
@@ -80,6 +87,6 @@ if (result.hasErrors()) {
 	     //   System.out.println(name);
 	        return "index";
 
-	    }*/
+	    }
 	
 }

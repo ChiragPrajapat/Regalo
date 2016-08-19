@@ -1,4 +1,6 @@
 <%@ include file="header.jsp" %>
+<style type="text/css">
+
 <body>
 
 <div class="container">

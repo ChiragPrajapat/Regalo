@@ -48,8 +48,10 @@ h1 {
 <td>
     <img src="<c:url value="/resources/images/logo3.png" />" height="100" width="100">
     </td>
+    <div class= "banner">
     <td><h1><b>Regalo</b></h1>
-    <p><I>Online portal for gifts!</I></p></td>
+    <p><I>Good for you.</I></p></td>
+    </div>
 </table>
   </div>
 
@@ -80,6 +82,13 @@ h1 {
 	<li><a href="addproduct">Add Product</a></li>
 			<li><a href="${pageContext.request.contextPath}/supdisp">Suppliers</a></li>
 			<li><a href="${pageContext.request.contextPath}/catdisp">Category</a></li>
+			<li><form:form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Search">
+						</div>
+						<button type="submit" class="btn btn-default"><span
+						class="glyphicon glyphicon-search"></span></button>
+					</form:form>
 <!-- 			</sec:authorize> -->
 				<li><a href="aboutus">About Us</a></li>
 
@@ -87,14 +96,7 @@ h1 {
 				
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><form:form class="navbar-form navbar-left" role="search">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Search">
-						</div>
-						<button type="submit" class="btn btn-default"><span
-						class="glyphicon glyphicon-search"></span></button>
-					</form:form>
-				<li><a href="addUser"><span
+				<li><a href="register"><span
 						class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 				<li><a href="login"><span
 						class="glyphicon glyphicon-log-in"></span> Login</a></li>

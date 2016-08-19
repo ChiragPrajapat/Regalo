@@ -68,9 +68,15 @@
  --%>
 
 
-	<div class="container" ng-app="myApp" ng-controller="myCtrl">
-		<c:set var="product_id" value="${param.id}"></c:set>
 
+	<div class="panel panel-primary" ng-app="myApp" ng-controller="myCtrl">
+	<div class="panel-heading">
+	<h3 class="panel-title">Products</h3>
+	</div>
+	
+		<c:set var="product_id" value="${param.id}"></c:set>
+<div class="panel-body">
+  
  
   <table class="table table-striped">
 		
@@ -116,7 +122,8 @@
 					<td>{{product.product_description}}</td>
 					<!-- <td>{{product.product_category}}</td> -->
 					<td><a href="details?id={{product.product_id}}">View</a>|
-<!-- 					 <sec:authorize access="hasRole('ROLE_ADMIN')"><a -->
+<!--  					 <sec:authorize access="hasRole('ROLE_ADMIN')"> -->
+<a
 						href="edit?id={{product.product_id}}">Edit</a>| <a
 						href="delete?id={{product.product_id}}">Delete</a>
 <!-- 						</sec:authorize></td> -->
@@ -158,7 +165,8 @@
 					<td>{{product.product_description}}</td>
 					<td>{{product.product_category}}</td>
 					<td><a href="details?id={{product.product_id}}">View</a>|
-<!-- 					 <sec:authorize access="hasRole('ROLE_ADMIN')"><a -->
+<!--  					 <sec:authorize access="hasRole('ROLE_ADMIN')"> -->
+<a 
 						href="edit?id={{product.product_id}}">Edit</a>| <a
 						href="delete?id={{product.product_id}}">Delete</a>
 						
@@ -171,8 +179,7 @@
 			
 		</table>
 	</div>
-
-
+</div>
 
 	<%-- <c:if test="${not empty lists}">
 

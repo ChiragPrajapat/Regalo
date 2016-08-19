@@ -27,8 +27,16 @@
 <%-- <div class="container" ng-app="myApp" ng-controller="myCtrl">
 		<c:set var="supplier_id" value="${param.id}"></c:set> --%>
 
- <h1>Suppliers</h1>
- <h3><a href="addsupplier">Add Supplier</a></h3>
+ 
+  
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h2 class="panel-title">Suppliers |  <a href="addsupplier">Add Supplier</a>
+ 
+ </h2>
+  </div>
+  <div class="panel-body">
+  
  <table class="table">
 			<thead>
 				<tr>
@@ -58,7 +66,8 @@
 				</c:forEach>
 			</tbody>
 		</table>
- 
+ </div>
+ </div>
   <!-- <table class="table table-striped">
 		
 		<thead>
@@ -85,6 +94,5 @@
 				</tr>
 </tbody>
 </table> -->
-</div>
 </body>
 </html>

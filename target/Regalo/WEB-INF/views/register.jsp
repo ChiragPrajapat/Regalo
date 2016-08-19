@@ -55,7 +55,7 @@
 					<td><form:label path="user_password">
 							<spring:message text="Password " />
 						</form:label></td>
-					<td><form:input path="user_password" /></td>
+					<td><form:input type="password" path="user_password" /></td>
 					<td><form:errors path="user_password" cssClass="error" /></td>
 				</tr>
 				<tr>

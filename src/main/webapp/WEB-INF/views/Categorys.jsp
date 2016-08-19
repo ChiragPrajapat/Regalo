@@ -29,7 +29,7 @@
 
  <h1>Categories</h1>
  <h3><a href="addcategory">Add Category</a></h3>
- <table class="table">
+  <table class="table table-striped table-hover ">
 			<thead>
 				<tr>
 					<th>Category id</th>

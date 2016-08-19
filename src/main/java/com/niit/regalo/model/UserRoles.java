@@ -1,5 +1,6 @@
 package com.niit.regalo.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name="User_Roles")
 public class UserRoles {
 @Id
 @Column(name="U_id")
@@ -19,7 +20,9 @@ private int u_id;
 
 @Column(name="AUTHORITY")
 	private String authority;
-
+//@ManyToOne(cascade={CascadeType.ALL})
+//@JoinColumn(name="user_id", updatable=false , insertable=false)
+//private User user;
 @Column(name="user_id")
 	private int user_id;
 

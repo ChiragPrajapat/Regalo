@@ -49,7 +49,7 @@ h1 {
     <img src="<c:url value="/resources/images/logo3.png" />" height="100" width="100">
     </td>
     <td><h1><b>Regalo</b></h1>
-    <p><I>Online portal for gifts!</I></p></td>
+    <p><I>Good for you.</I></p></td>
 </table>
   </div>
 
@@ -75,11 +75,11 @@ h1 {
 				<!--       </li> -->
 
 
-				<li><a href="disp?id=4">Products</a></li>
+				<li><a href="${pageContext.request.contextPath}/disp?id=4">Products</a></li>
 <!-- <sec:authorize access="hasRole('ROLE_ADMIN')">				 -->
 	<li><a href="addproduct">Add Product</a></li>
 			<li><a href="${pageContext.request.contextPath}/supdisp">Suppliers</a></li>
-			<li><a href="catdisp">Category</a></li>
+			<li><a href="${pageContext.request.contextPath}/catdisp">Category</a></li>
 <!-- 			</sec:authorize> -->
 				<li><a href="aboutus">About Us</a></li>
 

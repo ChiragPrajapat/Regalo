@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import com.niit.regalo.model.User;
+import com.niit.regalo.model.UserRoles;
 
 @Repository
 public class UserDAOImpl implements UserDAO {
@@ -28,6 +29,10 @@ public class UserDAOImpl implements UserDAO {
 	public void addUser(User u) {
 		Session session = this.sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
+		UserRoles ur = new UserRoles();
+		System.out.println("ur object created");
+		ur.setAuthority("ROLE_USER");
+		ur.setUser_id(u.getUser_id());
 		session.save(u);
 		tx.commit();
 		session.close();

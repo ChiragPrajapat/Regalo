@@ -1,10 +1,14 @@
 package com.niit.regalo.model;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -17,40 +21,41 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Table(name="User")
 public class User {
 	
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="user_id")
+//	@OneToMany(mappedBy="User" , fetch=FetchType.EAGER)
 	private int user_id;
 	
-//	@NotEmpty(message = "Name should not be empty")
+	@NotEmpty(message = "Name should not be empty")
 	@Column(name = " firstname")
 	private String user_firstname;
 	@Column(name = "lastname")
 	private String user_lastname;
 
+//	private Set<UserRoles> userRoles;
 	
-//	@NotEmpty(message = "User name should not be empty")
+	@NotEmpty(message = "User name should not be empty")
 	@Column(name = "username")
 	private String user_username;
 
-//	@NotEmpty(message = "password should not be empty")
-//	@Size(min = 6, max = 15)
+	@NotEmpty(message = "password should not be empty")
+	@Size(min = 6, max = 15)
 	@Column(name = "password")
 	private String user_password;
-
-//	@NotEmpty(message = "address should not be empty")
+	@NotEmpty(message = "address should not be empty")
 	@Column(name = "address")
 	private String user_address;
 	@Column(name = "gender")
 	private String user_gender;
 	@Column(name = "email" ,unique=true)
-//	@NotEmpty(message = "Email address should not be empty")
-//	@Email(message = "Enter Valid Email address")
+	@NotEmpty(message = "Email address should not be empty")
+	@Email(message = "Enter Valid Email address")
 	private String user_email;
 	@Column(name = "contact")
-//	@NotEmpty
+	@NotEmpty
 	private String user_contact;
+	
 	@Column(name="Enabled")
 	boolean enabled =true;
 	public boolean isEnabled() {
