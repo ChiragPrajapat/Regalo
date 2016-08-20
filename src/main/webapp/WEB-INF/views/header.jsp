@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,8 +31,9 @@
 body {
     font-family: Georgia, Times, serif , Fantasy;
     font-size: 160%;
-    color: Red;
-    background-color: 
+    color: maroon;
+/*     background-color:golden  */
+   	background-color: #00bcd4;
 /*     background-image: url("C:\Users\Dell\Desktop\gifts images\background image.jpg"); */
 }
 h1 {
@@ -46,12 +48,16 @@ h1 {
 <table>
 <tr>
 <td>
-    <img src="<c:url value="/resources/images/logo3.png" />" height="100" width="100">
+    <img src="<c:url value="/resources/images/gold-christmas-bow.png" />" height="150" width="211">
     </td>
-    <div class= "banner">
-    <td><h1><b>Regalo</b></h1>
-    <p><I>Good for you.</I></p></td>
+     <td>
+    <div class="container">
+    <div class="page-header">
+   <h1>Regalo</h1>
+    <p><I>Good for you.</I></p>
     </div>
+    </div>
+    </td>
 </table>
   </div>
 
@@ -78,8 +84,8 @@ h1 {
 
 
 				<li><a href="${pageContext.request.contextPath}/disp?id=4">Products</a></li>
-<!-- <sec:authorize access="hasRole('ROLE_ADMIN')">				 -->
-	<li><a href="addproduct">Add Product</a></li>
+		
+	<sec:authorize access="hasRole('ROLE_ADMIN')"><li><a href="addproduct">Add Product</a>	</li></sec:authorize>
 			<li><a href="${pageContext.request.contextPath}/supdisp">Suppliers</a></li>
 			<li><a href="${pageContext.request.contextPath}/catdisp">Category</a></li>
 			<li><form:form class="navbar-form navbar-left" role="search">
@@ -89,7 +95,7 @@ h1 {
 						<button type="submit" class="btn btn-default"><span
 						class="glyphicon glyphicon-search"></span></button>
 					</form:form>
-<!-- 			</sec:authorize> -->
+		
 				<li><a href="aboutus">About Us</a></li>
 
 				<li><a href="contactus">Contact Us</a></li>

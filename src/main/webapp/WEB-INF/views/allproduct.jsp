@@ -66,9 +66,42 @@
 		</table>
 	</div>
  --%>
-
-
-
+<br><br>
+<div id="carousel-example-2" class="carousel slide alternative" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-2" data-slide-to="1"></li>
+  </ol>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <div class="row">
+        <div class="col-md-3"><img src="<c:url value="/resources/images/procorousel/Beautiful-unique-dimond-Bracelet.jpg" />" style="max-width:100%;"></div>
+        <div class="col-md-3"><img src="<c:url value="/resources/images/procorousel/birthday_glass_frame.jpg" />" style="max-width:100%;"></div>
+        <div class="col-md-3"><img src="<c:url value="/resources/images/procorousel/bracelet.jpg" />" style="max-width:100%;"></div>
+        <div class="col-md-3"><img src="<c:url value="/resources/images/procorousel/dad_watch.jpg" />" style="max-width:100%;"></div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="row">
+        <div class="col-md-3"><img src="<c:url value="/resources/images/procorousel/flower_teddy_chocolate.jpg" />" style="max-width:100%;"></div>
+        <div class="col-md-3"><img src="<c:url value="/resources/images/procorousel/mirror.jpg" />" style="max-width:100%;"></div>
+        <div class="col-md-3"><img src="<c:url value="/resources/images/procorousel/photo_frame.jpg" />" style="max-width:100%;"></div>
+        <div class="col-md-3"><img src="<c:url value="/resources/images/procorousel/wrist_watch.jpg" />" style="max-width:100%;"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-2" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-2" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+<br>
+<div class="clearfix"></div><br>
 	<div class="panel panel-primary" ng-app="myApp" ng-controller="myCtrl">
 	<div class="panel-heading">
 	<h3 class="panel-title">Products</h3>
@@ -103,10 +136,8 @@
 					<td>{{product.product_description}}</td>
 					<!-- <td>{{product.product_category}}</td> -->
 					<td><a href="details?id={{product.product_id}}">View</a>|
-<!-- 					<sec:authorize access="hasRole('ROLE_ADMIN')">  -->
-					<a href="edit?id={{product.product_id}}">Edit</a>| <a
-						href="delete?id={{product.product_id}}">Delete</a>
-<!-- 						</sec:authorize></td> -->
+						<sec:authorize access="hasRole('ROLE_ADMIN')"><a href="edit?id={{product.product_id}}">Edit</a></sec:authorize>| 	<sec:authorize access="hasRole('ROLE_ADMIN')"><a
+						href="delete?id={{product.product_id}}">Delete</a></sec:authorize>
 				</tr>
 </tbody>
 			</c:if>
@@ -122,11 +153,8 @@
 					<td>{{product.product_description}}</td>
 					<!-- <td>{{product.product_category}}</td> -->
 					<td><a href="details?id={{product.product_id}}">View</a>|
-<!--  					 <sec:authorize access="hasRole('ROLE_ADMIN')"> -->
-<a
-						href="edit?id={{product.product_id}}">Edit</a>| <a
-						href="delete?id={{product.product_id}}">Delete</a>
-<!-- 						</sec:authorize></td> -->
+					<sec:authorize access="hasRole('ROLE_ADMIN')"><a href="edit?id={{product.product_id}}">Edit</a></sec:authorize>| 	<sec:authorize access="hasRole('ROLE_ADMIN')"><a
+						href="delete?id={{product.product_id}}">Delete</a></sec:authorize></td> 
 
 				</tr>
 </tbody>
@@ -145,12 +173,8 @@
 					<td>{{product.product_description}}</td>
 					<!-- <td>{{product.product_category}}</td> -->
 					<td><a href="details?id={{product.product_id}}">View</a>|
-<!-- 					<sec:authorize access="hasRole('ROLE_ADMIN')"> -->
-<a 
-						href="edit?id={{product.product_id}}">Edit</a>|
-						 <a
-						href="delete?id={{product.product_id}}">Delete</a>
-<!-- 						</sec:authorize></td> -->
+	<sec:authorize access="hasRole('ROLE_ADMIN')"><a href="edit?id={{product.product_id}}">Edit</a></sec:authorize>| 	<sec:authorize access="hasRole('ROLE_ADMIN')"><a
+						href="delete?id={{product.product_id}}">Delete</a></sec:authorize>
 				</tr>
 </tbody>
 			</c:if>
@@ -164,14 +188,9 @@
 					<td>{{product.product_price}}</td>
 					<td>{{product.product_description}}</td>
 					<td>{{product.product_category}}</td>
-					<td><a href="details?id={{product.product_id}}">View</a>|
-<!--  					 <sec:authorize access="hasRole('ROLE_ADMIN')"> -->
-<a 
-						href="edit?id={{product.product_id}}">Edit</a>| <a
-						href="delete?id={{product.product_id}}">Delete</a>
-						
-<!-- 					</sec:authorize></td> -->
-				</tr>
+					<td><a href="details?id={{product.product_id}}">View</a><sec:authorize access="hasRole('ROLE_ADMIN')">|
+	<a href="edit?id={{product.product_id}}">Edit</a>| 	<a
+						href="delete?id={{product.product_id}}">Delete</a></sec:authorize>
 				</tbody>
 			</c:if>
 

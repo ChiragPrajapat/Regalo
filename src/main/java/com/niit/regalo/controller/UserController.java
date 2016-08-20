@@ -56,14 +56,14 @@ if (result.hasErrors()) {
 	
 	 @RequestMapping(value="/login", method = RequestMethod.GET)
 	 public String login() {
-	 
+	 System.out.println("login page");
 	  return "login";
 	 
 	 }
 	 
 	 @RequestMapping(value="/fail2login", method = RequestMethod.GET)
 	 public ModelAndView loginerror(ModelMap model) {
-	 
+		 System.out.println("fail to login page");
 	
 	  return new ModelAndView("login","error",true);
 	 
@@ -79,6 +79,8 @@ if (result.hasErrors()) {
 	  return new ModelAndView("login","logoutmsg", "Logged Out Successfully");
 	 
 	 }
+	 
+	 
 	 @RequestMapping(value = "/welcome", method = RequestMethod.GET)
 	    public String printWelcome(ModelMap model, Principal principal) {
 

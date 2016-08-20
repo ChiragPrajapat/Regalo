@@ -1,0 +1,11 @@
+
+.body {
+background-image: url(E:\DT\regalo\Regalo\src\main\webapp\resources\images\background image.jpg); /*You will specify your image path here.*/
+
+-moz-background-size: cover;
+-webkit-background-size: cover;
+background-size: cover;
+background-position: top center !important;
+background-repeat: no-repeat !important;
+background-attachment: fixed;
+}

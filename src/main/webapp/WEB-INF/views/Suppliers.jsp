@@ -31,8 +31,7 @@
   
 <div class="panel panel-info">
   <div class="panel-heading">
-    <h2 class="panel-title">Suppliers |  <a href="addsupplier">Add Supplier</a>
- 
+    <h2 class="panel-title">Suppliers |  	<sec:authorize access="hasRole('ROLE_ADMIN')"><a href="addsupplier">Add Supplier</a></sec:authorize>
  </h2>
   </div>
   <div class="panel-body">
@@ -59,7 +58,7 @@
 						<td>${supplier.supplier_address}</td>
 						<td>${supplier.supplier_email}</td>
 						<td>${supplier.supplier_contact}</td>
-						<td><a href="${pageContext.request.contextPath}/supedit/${supplier.supplier_id} ">Edit</a>|<a href="${pageContext.request.contextPath}/supdelete/${supplier.supplier_id}">Delete</a></td>
+						<td>	<sec:authorize access="hasRole('ROLE_ADMIN')"><a href="${pageContext.request.contextPath}/supedit/${supplier.supplier_id} ">Edit</a></sec:authorize>|<a href="${pageContext.request.contextPath}/supdelete/${supplier.supplier_id}">Delete</a></td>
 
 					</tr>
 

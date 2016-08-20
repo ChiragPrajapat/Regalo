@@ -23,9 +23,9 @@ public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="user_id")
+	@Column(name="userid")
 //	@OneToMany(mappedBy="User" , fetch=FetchType.EAGER)
-	private int user_id;
+	private int userid;
 	
 	@NotEmpty(message = "Name should not be empty")
 	@Column(name = " firstname")
@@ -37,12 +37,12 @@ public class User {
 	
 	@NotEmpty(message = "User name should not be empty")
 	@Column(name = "username")
-	private String user_username;
+	private String username;
 
 	@NotEmpty(message = "password should not be empty")
 	@Size(min = 6, max = 15)
 	@Column(name = "password")
-	private String user_password;
+	private String password;
 	@NotEmpty(message = "address should not be empty")
 	@Column(name = "address")
 	private String user_address;
@@ -67,15 +67,15 @@ public class User {
 	}
 
 	public String toString() {
-		return user_id + " " + user_firstname + " " + user_lastname;
+		return userid + " " + user_firstname + " " + user_lastname;
 	}
 	
-	public int getUser_id() {
-		return user_id;
+	public int getUserid() {
+		return userid;
 	}
 
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setUser_id(int userid) {
+		this.userid = userid;
 	}
 
 	public String getUser_firstname() {
@@ -94,20 +94,22 @@ public class User {
 		this.user_lastname = user_lastname;
 	}
 
-	public String getUser_username() {
-		return user_username;
+
+
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUser_username(String user_username) {
-		this.user_username = user_username;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
-	public String getUser_password() {
-		return user_password;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setUser_password(String user_password) {
-		this.user_password = user_password;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getUser_address() {

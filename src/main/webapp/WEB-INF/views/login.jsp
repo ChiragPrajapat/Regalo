@@ -44,11 +44,11 @@
  </c:if>
 <form role="form" action="<c:url value='j_spring_security_check' />" method="post" >
   <div class="form-group">
-    <label for="email">UserName:</label>
+    <label for="name">UserName:</label>
     <input type="text"  name="j_username"  class="form-control" />
   </div>
   <div class="form-group">
-    <label for="user_password">Password:</label>
+    <label for="pass">Password:</label>
     <input type="password" class="form-control" name="j_password" />
   </div>
   <input type="hidden"  name="${_csrf.parameterName}"   value="${_csrf.token}"/>
@@ -57,12 +57,6 @@
 </div>
 </body>
 </html>
-
-
-
-
-
-
 <%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ include file="header.jsp"%>

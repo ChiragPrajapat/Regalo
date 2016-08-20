@@ -26,6 +26,8 @@
 
 	<h1>User Registration</h1>
 	<div class="container">
+		
+		
 		<form:form method="post" commandName="adduser"
 			enctype="/form-data" action="register">
 			<table class="table table-striped">
@@ -45,18 +47,18 @@
 				</tr>
 
 				<tr>
-					<td><form:label path="user_username">
+					<td><form:label path="username">
 							<spring:message text="User Name " />
 						</form:label></td>
-					<td><form:input path="user_username" /></td>
-					<td><form:errors path="user_username" cssClass="error" /></td>
+					<td><form:input path="username" /></td>
+					<td><form:errors path="username" cssClass="error" /></td>
 				</tr>
 				<tr>
-					<td><form:label path="user_password">
+					<td><form:label path="password">
 							<spring:message text="Password " />
 						</form:label></td>
-					<td><form:input type="password" path="user_password" /></td>
-					<td><form:errors path="user_password" cssClass="error" /></td>
+					<td><form:input type="password" path="password" /></td>
+					<td><form:errors path="password" cssClass="error" /></td>
 				</tr>
 				<tr>
 					<td><form:label path="user_address">

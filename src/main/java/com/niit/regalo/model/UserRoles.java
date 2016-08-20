@@ -18,13 +18,13 @@ public class UserRoles {
 @GeneratedValue(strategy = GenerationType.AUTO)
 private int u_id;
 
-@Column(name="AUTHORITY")
+@Column(name="authority")
 	private String authority;
 //@ManyToOne(cascade={CascadeType.ALL})
 //@JoinColumn(name="user_id", updatable=false , insertable=false)
 //private User user;
-@Column(name="user_id")
-	private int user_id;
+@Column(name="userid")
+	private int userid;
 
 
 public int getU_id() {
@@ -39,11 +39,11 @@ public String getAuthority() {
 public void setAuthority(String authority) {
 	this.authority = authority;
 }
-public int getUser_id() {
-	return user_id;
+public int getUserid() {
+	return userid;
 }
-public void setUser_id(int user_id) {
-	this.user_id = user_id;
+public void setUserid(int userid) {
+	this.userid = userid;
 }
 	
 }

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ include file="header.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +24,10 @@
 	width: 100%;
 	margin: inherit;
 }
+
+body {
+    background-image: url("background image.jpg");
+}
 </style>
 </head>
 
@@ -30,8 +35,7 @@
 
 
 <div class="container" ng-app="myapp" ng-controller="myctrl">
-	<%@ include file="header.jsp"%>
-
+	
 	<div class="container">
 		<br>
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -98,12 +102,14 @@
 		</div>
 	</div>
 
-	<br>
+<br>
+	
 	<div class="container">
+	<h1>_________________________________________________________</h1>
 		<h3>Gifts</h3>
 
 	</div>
-
+<br>
 	
 		<div class="container">
 			<div class="col-sm-4" style="">
@@ -128,6 +134,9 @@
 				<h2>Christmas Gifts</h2>
 			</div>
 		</div>
+		<h1>__________________________________________________________</h1>
 	</div>
+	
+	
 </body>
 </html>

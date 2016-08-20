@@ -1,8 +1,6 @@
 package com.niit.regalo.dao;
 
 
-import java.util.List;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -15,15 +13,8 @@ import com.niit.regalo.model.UserRoles;
 @Repository
 public class UserDAOImpl implements UserDAO {
 
-	// private static final Logger logger =
-	// LoggerFactory.getLogger(UserDAOImpl.class);
 	@Autowired
 	private SessionFactory sessionFactory;
-
-	/*
-	 * public void setSessionFactory(SessionFactory sf){ this.sessionFactory =
-	 * sf; }
-	 */
 
 	@Transactional
 	public void addUser(User u) {
@@ -31,16 +22,12 @@ public class UserDAOImpl implements UserDAO {
 		Transaction tx = session.beginTransaction();
 		UserRoles ur = new UserRoles();
 		System.out.println("ur object created");
-		ur.setAuthority("ROLE_USER");
-		ur.setUser_id(u.getUser_id());
 		session.save(u);
+		ur.setAuthority("ROLE_USER");
+		ur.setUserid(u.getUserid());
+		session.save(ur);
 		tx.commit();
 		session.close();
 		// logger.info("User saved successfully, User Details="+p);
-	}
-
-
-	
-
-			
+	}		
 		}
