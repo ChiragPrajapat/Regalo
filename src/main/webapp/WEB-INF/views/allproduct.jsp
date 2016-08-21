@@ -67,6 +67,7 @@
 	</div>
  --%>
 <br><br>
+	
 <div id="carousel-example-2" class="carousel slide alternative" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -216,6 +217,10 @@
 
 	</c:if> --%>
 
+<br>
+	<br>
+	
+<%@ include file="footer.jsp" %>	
 
 </body>
 </html>

@@ -23,9 +23,9 @@ public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="userid")
+	@Column(name="userId")
 //	@OneToMany(mappedBy="User" , fetch=FetchType.EAGER)
-	private int userid;
+	private int userId;
 	
 	@NotEmpty(message = "Name should not be empty")
 	@Column(name = " firstname")
@@ -67,15 +67,15 @@ public class User {
 	}
 
 	public String toString() {
-		return userid + " " + user_firstname + " " + user_lastname;
+		return userId + " " + user_firstname + " " + user_lastname;
 	}
 	
-	public int getUserid() {
-		return userid;
+	public int getUserId() {
+		return userId;
 	}
 
-	public void setUser_id(int userid) {
-		this.userid = userid;
+	public void setUserId(int userid) {
+		this.userId = userid;
 	}
 
 	public String getUser_firstname() {

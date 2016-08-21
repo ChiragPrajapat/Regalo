@@ -58,6 +58,11 @@
 			</div>
 		</div>
 	</div>
+<br>
+	<br>
+	
+<%@ include file="footer.jsp" %>	
+
 </body>
 </html>
 

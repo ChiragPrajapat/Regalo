@@ -11,10 +11,7 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <link href="<spring:url value="/resources/css/bootstrap.css" />" rel="stylesheet">
-
-
 <script type="text/javascript" src="<spring:url value="/resources/js/html5shiv.min.js" />" /></script>
 <script type="text/javascript" src="<spring:url value="/resources/js/respond.min.js" />" /></script>
 <script type="text/javascript" src="<spring:url value="/resources/jquery/jquery-2.2.4.min.js"/>" /></script>
@@ -44,7 +41,7 @@ h1 {
 <body>
 
 <br>
-<div style= "width:100% height:20%">
+<div style= "width:90% height:20%">
 <table>
 <tr>
 <td>
@@ -58,6 +55,15 @@ h1 {
     </div>
     </div>
     </td>
+    <td></td>
+    <td></td>
+    <td><form:form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Search">
+						</div>
+						<button type="submit" class="btn btn-default"><span
+						class="glyphicon glyphicon-search"></span></button>
+					</form:form></td>
 </table>
   </div>
 
@@ -88,23 +94,17 @@ h1 {
 	<sec:authorize access="hasRole('ROLE_ADMIN')"><li><a href="addproduct">Add Product</a>	</li></sec:authorize>
 			<li><a href="${pageContext.request.contextPath}/supdisp">Suppliers</a></li>
 			<li><a href="${pageContext.request.contextPath}/catdisp">Category</a></li>
-			<li><form:form class="navbar-form navbar-left" role="search">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Search">
-						</div>
-						<button type="submit" class="btn btn-default"><span
-						class="glyphicon glyphicon-search"></span></button>
-					</form:form>
+			
 		
-				<li><a href="aboutus">About Us</a></li>
+				<li><a href="${pageContext.request.contextPath}/aboutus">About Us</a></li>
 
-				<li><a href="contactus">Contact Us</a></li>
+				<li><a href="${pageContext.request.contextPath}/contactus">Contact Us</a></li>
 				
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="register"><span
+				<li><a href="${pageContext.request.contextPath}/register"><span
 						class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-				<li><a href="login"><span
+				<li><a href="${pageContext.request.contextPath}/login"><span
 						class="glyphicon glyphicon-log-in"></span> Login</a></li>
 			</ul>
 		</div>

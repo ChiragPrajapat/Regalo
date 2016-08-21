@@ -11,5 +11,10 @@
 <h1>Category Added successfully</h1>
 <h3>
 <a href="catdisp"> Show me list</a></h3>
+<br>
+	<br>
+	
+<%@ include file="footer.jsp" %>	
+
 </body>
 </html>

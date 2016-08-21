@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" isELIgnored="false"
     pageEncoding="ISO-8859-1"%>
       <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-      
+<%@ include file="header.jsp" %>      
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -29,7 +29,7 @@
 </head>
 <body>
 <div class="container">
-<%@ include file="header.jsp" %>
+
 
 <c:if test="${error=='true'}">
   <div class="errorblock">
@@ -42,6 +42,7 @@
    <c:out value="${logoutmsg}" />
    </div>
  </c:if>
+
 <form role="form" action="<c:url value='j_spring_security_check' />" method="post" >
   <div class="form-group">
     <label for="name">UserName:</label>
@@ -51,12 +52,14 @@
     <label for="pass">Password:</label>
     <input type="password" class="form-control" name="j_password" />
   </div>
-  <input type="hidden"  name="${_csrf.parameterName}"   value="${_csrf.token}"/>
+  <input type="hidden"  name="${_csrf.parameterName}"   value="${_csrf.token}"/> 
   <button type="submit" class="btn btn-default" >Submit</button>
 </form>
 </div>
 </body>
 </html>
+
+
 <%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ include file="header.jsp"%>

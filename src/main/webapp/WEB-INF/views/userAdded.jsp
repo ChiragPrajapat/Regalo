@@ -31,5 +31,10 @@ body{
 <h1>Successfully registered</h1>
 <h3>
 <a href="login">Login</a></h3>
+<br>
+	<br>
+	
+<%@ include file="footer.jsp" %>	
+
 </body>
 </html>

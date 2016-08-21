@@ -67,6 +67,11 @@
 		</table>
  </div>
  </div>
+ <br>
+	<br>
+	
+<%@ include file="footer.jsp" %>	
+ 
   <!-- <table class="table table-striped">
 		
 		<thead>

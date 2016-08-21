@@ -24,7 +24,7 @@ public class UserDAOImpl implements UserDAO {
 		System.out.println("ur object created");
 		session.save(u);
 		ur.setAuthority("ROLE_USER");
-		ur.setUserid(u.getUserid());
+		ur.setUserId(u.getUserId());
 		session.save(ur);
 		tx.commit();
 		session.close();

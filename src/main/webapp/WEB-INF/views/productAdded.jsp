@@ -11,5 +11,10 @@
 <h1>Gift Added successfully</h1>
 <h3>
 <a href="disp?id=4"> Show me list</a></h3>
+<br>
+	<br>
+	
+<%@ include file="footer.jsp" %>	
+
 </body>
 </html>

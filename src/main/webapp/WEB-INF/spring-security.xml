@@ -10,7 +10,10 @@
 
 	<security:http auto-config="true" use-expressions="true">
 		<security:form-login login-page="/login"
-			login-processing-url="/j_spring_security_check" default-target-url="/welcome"
+			 login-processing-url="/j_spring_security_check"
+			default-target-url="/welcome"
+			username-parameter="j_username"
+			password-parameter="j_password"
 			authentication-failure-url="/fail2login" />
 
 		<security:logout logout-success-url="/logout" />
@@ -23,8 +26,8 @@
 
 			<security:jdbc-user-service
 				data-source-ref="dataSource"
-				users-by-username-query="select username,password,enabled from User where username=?"
-				authorities-by-username-query="select u1.username, u2.authority from User u1, User_Roles u2 where u1.userid = u2.userid and u1.username =?" />
+				users-by-username-query="select username, password, enabled from User where username=?"
+				authorities-by-username-query="select u1.username, u2.authority from User u1, UserRoles u2 where u1.userId = u2.userId and u1.username =?" />
 		</security:authentication-provider>
 	</security:authentication-manager>
 </beans>

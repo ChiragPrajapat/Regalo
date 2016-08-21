@@ -36,6 +36,10 @@
     Relago is an online gift store . It offers a wide range of gift-options, most of which are exclusive Indian products, right on your desktop. 
     On click of a mouse, you will discover it is just the kind of gift store you've always been looking for. </div>
 </div>
+    <br>
+	<br>
+	
+<%@ include file="footer.jsp" %>	
     
 </body>
 </html>
