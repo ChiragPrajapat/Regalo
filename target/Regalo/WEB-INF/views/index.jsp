@@ -24,10 +24,6 @@
 	width: 100%;
 	margin: inherit;
 }
-
-body {
-    background-image: url("background image.jpg");
-}
 </style>
 </head>
 
@@ -106,11 +102,10 @@ body {
 	
 	<div class="container">
 	<h1>_________________________________________________________</h1>
-		<h3>Gifts</h3>
+		<h3><u>Gifts by categories</u></h3>
 
 	</div>
 <br>
-	
 		<div class="container">
 			<div class="col-sm-4" style="">
 				<a href="disp?id=1"> <img
@@ -136,7 +131,9 @@ body {
 		</div>
 		<h1>__________________________________________________________</h1>
 	</div>
+	<br>
+	<br>
 	
-	
+<%@ include file="footer.jsp" %>	
 </body>
 </html>

@@ -37,6 +37,7 @@
     On click of a mouse, you will discover it is just the kind of gift store you've always been looking for. </div>
 </div>
     <br>
+   
 	<br>
 	
 <%@ include file="footer.jsp" %>	

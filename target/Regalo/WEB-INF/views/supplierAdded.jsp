@@ -11,5 +11,10 @@
 <h1>Supplier Added successfully</h1>
 <h3>
 <a href="supdisp"> Show me list</a></h3>
+<br>
+	<br>
+	
+<%@ include file="footer.jsp" %>	
+
 </body>
 </html>

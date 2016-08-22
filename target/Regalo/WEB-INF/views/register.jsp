@@ -3,8 +3,8 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ include file="header.jsp"%>
 
+<%@ include file ="header.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,9 +20,9 @@
 	font-weight: bold;
 }
 </style>
+
 </head>
-<body>
-	
+<body>	
 
 	<h1>User Registration</h1>
 	<div class="container">
@@ -96,5 +96,10 @@
 			</table>
 		</form:form>
 	</div>
+<br>
+	<br>
+	
+<%@ include file="footer.jsp" %>	
+
 </body>
 </html>

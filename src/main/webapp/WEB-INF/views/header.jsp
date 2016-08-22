@@ -36,11 +36,11 @@ body {
 	color: maroon;
 	/*     background-color:golden  */
 	background-color:
-	/*     background-image: url("C:\Users\Dell\Desktop\gifts images\background image.jpg"); */
+		/*     background-image: url("C:\Users\Dell\Desktop\gifts images\background image.jpg"); */
 }
 
 h1 {
-	font-family: Helvetica, Arial,Prida02Calt; 
+	font-family: Helvetica, Arial, Prida02Calt;
 }
 </style>
 </head>
@@ -63,9 +63,9 @@ h1 {
 						</div>
 					</div>
 				</td>
-					</table>
+		</table>
 	</div>
-	
+
 
 
 	<nav class="navbar navbar-inverse">
@@ -77,19 +77,7 @@ h1 {
 			<ul class="nav navbar-nav">
 				<li><a href="/Regalo"><span
 						class="glyphicon glyphicon-home"></span> Home</a></li>
-
-
-				<!--       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="">About us<span class="caret"></span></a> -->
-				<!--         <ul class="dropdown-menu"> -->
-				<!--           <li><a href="#">Page 1-1</a></li> -->
-				<!--           <li><a href="#">Page 1-2</a></li> -->
-				<!--           <li><a href="#">Page 1-3</a></li> -->
-				<!--         </ul> -->
-				<!--       </li> -->
-
-
 				<li><a href="${pageContext.request.contextPath}/disp?id=4">Products</a></li>
-
 				<sec:authorize access="hasRole('ROLE_ADMIN')">
 					<li><a href="addproduct">Add Product</a></li>
 				</sec:authorize>
@@ -99,21 +87,24 @@ h1 {
 						Us</a></li>
 				<li><a href="${pageContext.request.contextPath}/contactus">Contact
 						Us</a></li>
+						
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-			<li><form:form class="navbar-form navbar-left" role="search">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Search">
-						</div>
-						<button type="submit" class="btn btn-default">
-							<span class="glyphicon glyphicon-search"></span>
-						</button>
-					</form:form>
-			
-				<li><a href="${pageContext.request.contextPath}/register"><span
-						class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-				<li><a href="${pageContext.request.contextPath}/login"><span
-						class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					 <li><sec:authorize access="hasRole('ROLE_USER')">
+						<a href="${pageContext.request.contextPath}/cart"><span
+								class="glyphicon glyphicon-shopping-cart"></span> Cart</a>
+					</li></sec:authorize>
+					<sec:authorize access="isAnonymous()">
+						<li><a href="${pageContext.request.contextPath}/register"><span
+								class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+						<li><a href="${pageContext.request.contextPath}/login"><span
+								class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					</sec:authorize>
+				<li><sec:authorize access="isAuthenticated()">
+						<li><a href='<c:url value="/logout" />'> <span
+								class="glyphicon glyphicon-log-out"></span> Logout
+						</a></li>
+					</sec:authorize>
 			</ul>
 		</div>
 	</nav>

@@ -30,7 +30,7 @@
 <body>
 
 
-<div class="container" ng-app="myapp" ng-controller="myctrl">
+<div align="center"class="container-fluid" ng-app="myapp" ng-controller="myctrl">
 	
 	<div class="container">
 		<br>
@@ -101,7 +101,7 @@
 <br>
 	
 	<div class="container">
-	<h1>_________________________________________________________</h1>
+	<hr>
 		<h3><u>Gifts by categories</u></h3>
 
 	</div>
@@ -110,14 +110,14 @@
 			<div class="col-sm-4" style="">
 				<a href="disp?id=1"> <img
 					src="<c:url value="/resources/images/Birthday-Gifts-2.jpg" />"
-					class="img-circle" alt="birthday_gift" width="304" height="236"></a>
+					class="img-circle img-responsive" alt="birthday_gift" style="width:200pt; height:200pt"></a>
 				<h2>Birthday Gifts</h2>
 			</div>
 
 			<div class="col-sm-4" style="">
 				<a href="disp?id=2"> <img
 					src="<c:url value="/resources/images/CarMarriedCouple.jpg" />"
-					class="img-circle" alt="Wedding_gift" width="304" height="236"></a>
+					class="img-circle img-responsive" alt="Wedding_gift" style="width:200pt; height:200pt"></a>
 				<h2>Wedding Gifts</h2>
 			</div>
 
@@ -125,11 +125,11 @@
 
 				<a href="disp?id=3"> <img
 					src="<c:url value="/resources/images/Christmas-Tree-With-Presents.png" />"
-					class="img-circle" alt="Cinque Terre" width="304" height="236"></a>
+					class="img-circle img-responsive" alt="Cinque Terre" style="width:200pt; height:200pt"></a>
 				<h2>Christmas Gifts</h2>
 			</div>
 		</div>
-		<h1>__________________________________________________________</h1>
+<hr>
 	</div>
 	<br>
 	<br>

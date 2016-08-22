@@ -57,5 +57,10 @@
 			</tr>
 		</table>
 	</form:form>
+<br>
+	<br>
+	
+<%@ include file="footer.jsp" %>	
+
 </body>
 </html>

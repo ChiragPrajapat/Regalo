@@ -37,7 +37,7 @@
 					</form:label></td>
 				<td><form:input path="category_description" /></td>
 				<td><form:errors path="category_description" cssClass="error" /></td>
-		
+		  <td><input type="hidden"  name="${_csrf.parameterName}"   value="${_csrf.token}"/></td> 
 				<td colspan="2"><input type="submit" value="Add" /></td>
 			</tr>
 		</table>
