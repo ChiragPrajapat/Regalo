@@ -15,13 +15,13 @@
 <link href="<spring:url value="/resources/css/bootstrap.css" />"
 	rel="stylesheet">
 <script type="text/javascript"
-	src="<spring:url value="/resources/js/html5shiv.min.js" />" /></script>
+	src="<spring:url value="resources/js/html5shiv.min.js" />" /></script>
 <script type="text/javascript"
-	src="<spring:url value="/resources/js/respond.min.js" />" /></script>
+	src="<spring:url value="resources/js/respond.min.js" />" /></script>
 <script type="text/javascript"
-	src="<spring:url value="/resources/jquery/jquery-2.2.4.min.js"/>" /></script>
+	src="<spring:url value="resources/jquery/jquery-2.2.4.min.js"/>" /></script>
 <script type="text/javascript"
-	src="<spring:url value="/resources/js/bootstrap.min.js" />" /></script>
+	src="<spring:url value="resources/js/bootstrap.min.js" />" /></script>
 <script
 	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="<c:url value='/resources/js/AngularjsController.js'/>"></script>
@@ -45,7 +45,6 @@ h1 {
 </style>
 </head>
 <body>
-
 	<br>
 	<div style="width: 90% height:20%">
 		<table>
@@ -65,9 +64,6 @@ h1 {
 				</td>
 		</table>
 	</div>
-
-
-
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -77,19 +73,7 @@ h1 {
 			<ul class="nav navbar-nav">
 				<li><a href="/Regalo"><span
 						class="glyphicon glyphicon-home"></span> Home</a></li>
-
-
-				<!--       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="">About us<span class="caret"></span></a> -->
-				<!--         <ul class="dropdown-menu"> -->
-				<!--           <li><a href="#">Page 1-1</a></li> -->
-				<!--           <li><a href="#">Page 1-2</a></li> -->
-				<!--           <li><a href="#">Page 1-3</a></li> -->
-				<!--         </ul> -->
-				<!--       </li> -->
-
-
 				<li><a href="${pageContext.request.contextPath}/disp?id=4">Products</a></li>
-
 				<sec:authorize access="hasRole('ROLE_ADMIN')">
 					<li><a href="addproduct">Add Product</a></li>
 				</sec:authorize>
@@ -99,26 +83,22 @@ h1 {
 						Us</a></li>
 				<li><a href="${pageContext.request.contextPath}/contactus">Contact
 						Us</a></li>
+						
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				
-				<li><form:form class="navbar-form navbar-left" role="search">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Search">
-						</div>
-						<button type="submit" class="btn btn-default">
-							<span class="glyphicon glyphicon-search"></span>
-						</button>
-					</form:form>
-				<sec:authorize access="isAnonymous()">		 
-				<li><a href="${pageContext.request.contextPath}/register"><span
-						class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-				<li><a href="${pageContext.request.contextPath}/login"><span
-						class="glyphicon glyphicon-log-in"></span> Login</a></li>
-						</sec:authorize>
+					 <li><sec:authorize access="hasRole('ROLE_USER')">
+						<a href="${pageContext.request.contextPath}/viewcart"><span
+								class="glyphicon glyphicon-shopping-cart"></span> Cart</a>
+					</li></sec:authorize>
+					<sec:authorize access="isAnonymous()">
+						<li><a href="${pageContext.request.contextPath}/register"><span
+								class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+						<li><a href="${pageContext.request.contextPath}/login"><span
+								class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					</sec:authorize>
 				<li><sec:authorize access="isAuthenticated()">
-						<li><a href='<c:url value="/j_spring_security_logout" />'>
-								<span class="glyphicon glyphicon-log-out"></span> Logout
+						<li><a href='<c:url value="/logout" />'> <span
+								class="glyphicon glyphicon-log-out"></span> Logout
 						</a></li>
 					</sec:authorize>
 			</ul>

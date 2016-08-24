@@ -17,8 +17,8 @@
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <style>
-    #body {
-        *background: url(E:\DT\regalo\Regalo\src\main\webapp\resources\images\background image.jpg) no-repeat center center fixed; /* For IE 6 and 7 */
+    body {
+        background: url(E:\DT\regalo\Regalo\src\main\webapp\resources\images\background image.jpg) no-repeat center center fixed; /* For IE 6 and 7 */
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -33,10 +33,11 @@
   <h2>Regalo</h2>
   <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">about Regalo</button>
   <div id="demo" class="collapse in">
-    Relago is an online gift store . It offers a wide range of gift-options, most of which are exclusive Indian products, right on your desktop. 
-    On click of a mouse, you will discover it is just the kind of gift store you've always been looking for. </div>
+    <p>Relago is an online gift store . It offers a wide range of gift-options, most of which are exclusive Indian products, right on your desktop. 
+    On click of a mouse, you will discover it is just the kind of gift store you've always been looking for. </p></div>
 </div>
     <br>
+   
 	<br>
 	
 <%@ include file="footer.jsp" %>	

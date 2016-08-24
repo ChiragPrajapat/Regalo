@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="keywords" content="footer, address, phone, icons" />
 
-<title>Footer With Address And Phones</title>
+<title>Footer</title>
 
 <link rel="stylesheet" href="/resources/css/demo.css">
 <link rel="stylesheet"
@@ -27,17 +27,17 @@
 <body>
 	<!-- The content of your page would go here. -->
 
-
-
+<hr>
+<footer id ="footer">
 	<div class="container">
-		<div class="col-sm-2" style="">Regalo &copy; 2016</div>
+		<div class="col-sm-2" style="">Copyright &copy; 2016 Regalo</div>
 
 		<div class="col-sm-8" style="">
 
 			<div class="footer-icons">
 				<i class="fa fa-map-marker"></i> <span>21 Revolution Street</span>
-				Paris, France | <i class="fa fa-phone"></i> +1 555 123456 | <i
-					class="fa fa-envelope"></i> <a href="mailto:support@company.com">support@company.com</a>
+				Mumbai, India | <i class="fa fa-phone"></i> +91 99706 43295 / 020 255 448 | <i
+					class="fa fa-envelope"></i> <a href="mailto:support@company.com">support@regalo.com</a>
 			</div>
 		</div>
 		<div class="col-sm-2" style="">

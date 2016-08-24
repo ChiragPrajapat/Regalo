@@ -1,77 +1,83 @@
 package com.niit.regalo.model;
 
+import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Cart")
-public class Cart {
+public class Cart implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int cartId;
-	private int userId;
-	private String product_name;
+//	@OneToMany(mappedBy="Cart", cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+	//@OneToOne(fetch=FetchType.EAGER)
+//	@JoinColumn(name="UserId")
+	private int productId;
 	private int quantity;
-	private int price;
-	private String status;
-	public int getUserId() {
+	private double price;
+	private String address;
+	private String Contact;
+	private String ProductName;
+	private String userId;
+	
+	public String getUserId() {
 		return userId;
 	}
-
-	public void setUserId(int userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	private long total;
-
 	public int getCartId() {
 		return cartId;
 	}
-
 	public void setCartId(int cartId) {
 		this.cartId = cartId;
 	}
-
-	public String getProduct_name() {
-		return product_name;
+	public int getProductId() {
+		return productId;
 	}
-
-	public void setProduct_name(String product_name) {
-		this.product_name = product_name;
+	public void setProductId(int productId) {
+		this.productId = productId;
 	}
-
 	public int getQuantity() {
 		return quantity;
 	}
-
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-
-	public int getPrice() {
+	public double getPrice() {
 		return price;
 	}
-
-	public void setPrice(int price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
-
-	public long getTotal() {
-		return total;
+	public String getAddress() {
+		return address;
 	}
-
-	public void setTotal(long total) {
-		this.total = total;
+	public void setAddress(String address) {
+		this.address = address;
 	}
-}
+	public String getContact() {
+		return Contact;
+	}
+	public void setContact(String contact) {
+		Contact = contact;
+	}
+	public String getProductName() {
+		return ProductName;
+	}
+	public void setProductName(String productName) {
+		ProductName = productName;
+	}
+	
+	}

@@ -1,6 +1,9 @@
 package com.niit.regalo.dao;
 
 
+import java.util.List;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -26,8 +29,61 @@ public class UserDAOImpl implements UserDAO {
 		ur.setAuthority("ROLE_USER");
 		ur.setUserId(u.getUserId());
 		session.save(ur);
+//		Cart c = new Cart();
+//		c.setGrandTotal(0);
+//		c.setUsersDetail(u);
+//		session.save(c);
+//		u.setCart(c);
+//		session.update(u);
 		tx.commit();
 		session.close();
+	}
 		// logger.info("User saved successfully, User Details="+p);
-	}		
+//		
+//		@Transactional
+//		public void addCustomer(Customer p) {
+//			Session session = sessionFactory.openSession();
+//			Transaction tx = session.beginTransaction();
+//			session.save(p);		
+//			UserRoles ur = new UserRoles();
+//			ur.setAuthority("ROLE_USER");
+//			ur.setCustId(p.getCustId());
+//			session.save(ur);
+//			Cart c = new Cart();
+//			c.setGrandTotal(0);
+//			c.setUsersDetail(p);
+//			session.save(c);
+//			p.setCart(c);
+//			session.update(p);
+//			tx.commit();
+//			session.close();
+//		}
+		public User getUserByUserId(int id)
+		{
+			Session session = sessionFactory.openSession();		
+//			System.out.print(id);
+			User u = (User) session.load(User.class, new Integer(id));
+			session.close();
+			return u;
 		}
+		 public List<User> getAllUsers() {
+		        Session session = sessionFactory.openSession();
+		        Query query = session.createQuery("from User");
+		        @SuppressWarnings("unchecked")
+				List<User> usersDetail = query.list();
+
+		        return usersDetail;
+		    }
+
+		    public User getUserByUsername (String username) {
+		        Session session = sessionFactory.openSession();
+		        
+		        Query query = session.createQuery("from User where username = ?");
+		        query.setString(0, username);
+
+		        return (User) query.uniqueResult();
+		    }
+
+
+	}		
+

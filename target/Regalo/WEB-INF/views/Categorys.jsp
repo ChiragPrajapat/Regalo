@@ -43,7 +43,8 @@
 	<div class="panel panel-red invert">
 		<div class="panel-heading">
 			<h3 class="panel-title">Categories</h3>
-			<a href="addcategory">Add Category</a>
+			<sec:authorize access="hasRole('ROLE_ADMIN')">
+			<a href="addcategory">Add Category</a></sec:authorize>
 		</div>
 		<div class="panel-body">
 

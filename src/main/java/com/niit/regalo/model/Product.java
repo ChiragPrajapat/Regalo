@@ -28,6 +28,16 @@ public class Product {
 	private String product_description;
 	@NotEmpty
 	private String product_category;
+//	@NotNull
+//	@Min(1)
+//	private int stock;
+//	public int getStock() {
+//		return stock;
+//	}
+//
+//	public void setStock(int stock) {
+//		this.stock = stock;
+//	}
 
 	@Column(name = "ImagePath")
 	private String image;

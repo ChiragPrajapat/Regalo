@@ -3,12 +3,13 @@ package com.niit.regalo.dao;
 import java.util.List;
 
 import com.niit.regalo.model.Cart;
+import com.niit.regalo.model.Product;
 
 public interface CartDAO {
 
-		public void addToCart(Cart c);
-		public List<Cart> listCart();
-		public void delete(int Id);
-		public Cart FindById(int cartId);
-		
-	}
+	public void addToCart(Cart c);
+	public String updateCart(Cart c);
+	public void remove(int cartId);
+	public List<Cart> Cartlist();
+	public Cart getById(int cartId);
+}

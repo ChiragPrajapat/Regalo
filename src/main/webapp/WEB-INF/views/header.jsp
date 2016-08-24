@@ -15,13 +15,13 @@
 <link href="<spring:url value="/resources/css/bootstrap.css" />"
 	rel="stylesheet">
 <script type="text/javascript"
-	src="<spring:url value="/resources/js/html5shiv.min.js" />" /></script>
+	src="<spring:url value="resources/js/html5shiv.min.js" />" /></script>
 <script type="text/javascript"
-	src="<spring:url value="/resources/js/respond.min.js" />" /></script>
+	src="<spring:url value="resources/js/respond.min.js" />" /></script>
 <script type="text/javascript"
-	src="<spring:url value="/resources/jquery/jquery-2.2.4.min.js"/>" /></script>
+	src="<spring:url value="resources/jquery/jquery-2.2.4.min.js"/>" /></script>
 <script type="text/javascript"
-	src="<spring:url value="/resources/js/bootstrap.min.js" />" /></script>
+	src="<spring:url value="resources/js/bootstrap.min.js" />" /></script>
 <script
 	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="<c:url value='/resources/js/AngularjsController.js'/>"></script>
@@ -45,7 +45,6 @@ h1 {
 </style>
 </head>
 <body>
-
 	<br>
 	<div style="width: 90% height:20%">
 		<table>
@@ -65,9 +64,6 @@ h1 {
 				</td>
 		</table>
 	</div>
-
-
-
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -91,7 +87,7 @@ h1 {
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 					 <li><sec:authorize access="hasRole('ROLE_USER')">
-						<a href="${pageContext.request.contextPath}/cart"><span
+						<a href="${pageContext.request.contextPath}/viewcart"><span
 								class="glyphicon glyphicon-shopping-cart"></span> Cart</a>
 					</li></sec:authorize>
 					<sec:authorize access="isAnonymous()">

@@ -49,11 +49,31 @@
 				</tr>
 				<tr>
 			</table>
-		</div>
+			
+ 
+<sec:authorize access="hasRole('ROLE_USER')">
 
-		<a class="list-group-item" href="cart">
-			<button class="btn btn-primary btn-lg btn-block">add to cart</button>
+<form:form method="POST"
+			action="${pageContext.request.contextPath}/addtocart?product_id=${param.id}"
+			modelAttribute="cart">
+
+			<input type="hidden" value="${param.id} " />
+
+<!-- 			<span class="h5"> <label>Quantity : </label> -->
+<%-- 			<form:input path="quantity"  --%>
+<%-- 			class="form-control" --%>
+<%-- 					type="number" style="width:15%"/> --%>
+<!-- 			</span> -->
+<!-- 			<br /> -->
+
+<input type="submit"value="add to cart">
+		</form:form>
+	
+		<a class="list-group-item" href="disp?id=4">
+			<button class="btn btn-primary btn-lg btn-block">Continue Shopping</button>
 		</a>
+		</sec:authorize>
+	</div>
 	</div>
 	<br>
 	<br>

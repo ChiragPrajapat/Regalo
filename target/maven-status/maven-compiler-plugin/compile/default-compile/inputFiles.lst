@@ -2,6 +2,7 @@ E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\controller\RegaloController.ja
 E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\dao\CategoryDAOImpl.java
 E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\dao\SupplierDAO.java
 E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\model\User.java
+E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\dao\CartDAO.java
 E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\service\CategoryServiceImpl.java
 E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\controller\UserController.java
 E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\dao\SupplierDAOImpl.java
@@ -11,9 +12,11 @@ E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\controller\SupplierController.
 E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\model\UserRoles.java
 E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\dao\ProductDAO.java
 E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\service\UserServiceImpl.java
+E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\model\Cart.java
 E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\service\ProductService.java
 E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\service\CategoryService.java
 E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\dao\CategoryDAO.java
+E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\dao\CartDAOImpl.java
 E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\service\SupplierService.java
 E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\model\Supplier.java
 E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\dao\ProductDAOImpl.java
@@ -22,5 +25,6 @@ E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\FileUtil.java
 E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\controller\CategoryController.java
 E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\service\ProductServiceImpl.java
 E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\service\SupplierServiceImpl.java
+E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\controller\CartController.java
 E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\model\Product.java
 E:\DT\regalo\Regalo\src\main\java\com\niit\regalo\service\UserService.java

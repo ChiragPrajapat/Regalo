@@ -6,7 +6,9 @@ com\niit\regalo\service\CategoryService.class
 com\niit\regalo\FileUtil.class
 com\niit\regalo\dao\SupplierDAOImpl.class
 com\niit\regalo\dao\ProductDAO.class
+com\niit\regalo\model\Cart.class
 com\niit\regalo\service\CategoryServiceImpl.class
+com\niit\regalo\dao\CartDAOImpl.class
 com\niit\regalo\dao\CategoryDAOImpl.class
 com\niit\regalo\controller\CategoryController.class
 com\niit\regalo\controller\SupplierController.class
@@ -24,3 +26,5 @@ com\niit\regalo\dao\ProductDAOImpl.class
 com\niit\regalo\dao\CategoryDAO.class
 com\niit\regalo\model\Supplier.class
 com\niit\regalo\service\ProductService.class
+com\niit\regalo\dao\CartDAO.class
+com\niit\regalo\controller\CartController.class

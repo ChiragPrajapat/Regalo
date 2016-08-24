@@ -89,7 +89,7 @@ public class ProductDAOImpl implements ProductDAO {
 		System.out.println(file.getOriginalFilename());
 		
 		
-		File serverFile = new File("E:/DT/Demo/Regalo/"+p.getProduct_category()+"/"+p.getImage());
+		File serverFile = new File("E:/DT/Demo/Regalo/regalo/Regalo/src/main/webapp/resources/images/"+p.getProduct_category()+"/"+p.getImage());
 		serverFile.createNewFile();
 		BufferedOutputStream stream = new BufferedOutputStream(
 				new FileOutputStream(serverFile));

@@ -155,7 +155,7 @@
     		<h2>Search</h2>
             <div id="custom-search-input">
                 <div class="input-group col-md-12">
-                    <input ng-model="search.name" type="text" class="form-control input-lg" placeholder="Search" />
+                    <input ng-model="search.product_name" type="text" class="form-control input-lg" placeholder="Search" />
                     <span class="input-group-btn">
                         <button class="btn btn-info btn-lg" type="button">
                             <i class="glyphicon glyphicon-search"></i>
@@ -255,7 +255,9 @@
 								<td>{{product.product_price}}</td>
 								<td>{{product.product_description}}</td>
 								<td>{{product.product_category}}</td>
-								<td><a href="details?id={{product.product_id}}">View</a> <sec:authorize
+								<td><a href="details?id={{product.product_id}}">View</a>
+								
+								 <sec:authorize
 										access="hasRole('ROLE_ADMIN')">|
 	<a href="edit?id={{product.product_id}}">Edit</a>| 	<a
 											href="delete?id={{product.product_id}}">Delete</a>
