@@ -8,10 +8,10 @@
 </head>
 <%@include file="/WEB-INF/views/header.jsp"%>
 <body>
-<form:form method="post" "
-			enctype="/form-data" action="">
+<form:form role="form "method="post" 
+			commandName="cart">
 			<table class="table table-striped">
-				<tr>
+				<%-- <tr>
 					<td><form:label path="">
 							<spring:message text=" Name" />
 						</form:label></td>
@@ -30,26 +30,27 @@
 						</form:label></td>
 					<td><form:input path="user_contact" /></td>
 					
-				</tr>
+				</tr> --%>
 
 
 				<tr>
-					<td><form:label path="user_address">
+					<td><form:label path="address">
 							<spring:message text="Shipping Address" />
 						</form:label></td>
 				
-					<td><form:textarea path="user_address" rows="3"  cols="20"/></td>
-					<td><form:errors path="user_address" cssClass="error" /></td>
+					<td><form:textarea path="address" rows="3"  cols="20"/></td>
+					<td><form:errors path="address" cssClass="error" /></td>
 				</tr>
 				<tr>
-					<!-- 
+					 
 				<tr>
-					<td><form:radiobutton path="user_gender" value=" M" label=" M"/>
-					<form:radiobutton path="user_gender" value=" F" label=" F"/></td>
+				<td><form:label path="contact">
+							<spring:message text="Contact " />
+						</form:label></td>
+					<td><form:input path="contact" /></td>
 				</tr>
-				 -->
 				<tr>
-					<td><input type="submit" value="Confirm" /></td>
+					<td><input type="submit" name="_eventId_submit" value="Confirm" /></td>
 					<td><input type="reset" value="Reset" /></td>
 				</tr>
 			</table>

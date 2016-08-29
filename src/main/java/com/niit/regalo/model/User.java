@@ -2,11 +2,15 @@ package com.niit.regalo.model;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -21,7 +25,7 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="userId")
-//	@OneToMany(mappedBy="User" , fetch=FetchType.EAGER)
+//	@OneToOne(mappedBy="UserId" , fetch=FetchType.EAGER)
 	private int userId;
 	
 	@NotEmpty(message = "Name should not be empty")
@@ -29,7 +33,17 @@ public class User {
 	private String user_firstname;
 	@Column(name = "lastname")
 	private String user_lastname;
-
+//public Cart getCart() {
+//		return cart;
+//	}
+//
+//	public void setCart(Cart cart) {
+//		this.cart = cart;
+//	}
+//
+//@OneToOne(cascade=CascadeType.ALL)
+//@JoinColumn(name="userId")
+//	private Cart cart;
 //	private Set<UserRoles> userRoles;
 	
 	@NotEmpty(message = "User name should not be empty")

@@ -6,12 +6,12 @@
 
 	<var name="cart" class="com.niit.regalo.model.Cart" />
 	<action-state id="processCheckout">
-		<evaluate expression="CartDAOImpl.getById(requestParameters.cartId)"
+		<evaluate expression="cartDAOImpl.getById(requestParameters.cartId)"
 			result="cart"></evaluate>
 		<transition to="InvalidCartWarning" on-exception="java.lang.NullPointerException" />
 		<transition to="collectCustomerInfo" />
 	</action-state>
-	<view-state id="collectCustomerInfo" view="billing.jsp"
+	<view-state id="collectCustomerInfo" view="Billing.jsp"
 		model="cart" popup="true">
 		<transition on="submit" to="orderConfirmation" />
 		<transition on="backToCollectCustomerInfo" to="collectCustomerInfo" />

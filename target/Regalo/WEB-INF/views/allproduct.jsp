@@ -219,7 +219,6 @@
 									</sec:authorize>| <sec:authorize access="hasRole('ROLE_ADMIN')">
 										<a href="delete?id={{product.product_id}}">Delete</a>
 									</sec:authorize></td>
-
 							</tr>
 						</tbody>
 					</c:if>
@@ -255,7 +254,9 @@
 								<td>{{product.product_price}}</td>
 								<td>{{product.product_description}}</td>
 								<td>{{product.product_category}}</td>
-								<td><a href="details?id={{product.product_id}}">View</a> <sec:authorize
+								<td><a href="details/{{product.product_id}}">View</a>
+								
+								 <sec:authorize
 										access="hasRole('ROLE_ADMIN')">|
 	<a href="edit?id={{product.product_id}}">Edit</a>| 	<a
 											href="delete?id={{product.product_id}}">Delete</a>

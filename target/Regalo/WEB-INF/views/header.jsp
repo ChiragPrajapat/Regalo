@@ -89,7 +89,7 @@ h1 {
 					 <li><sec:authorize access="hasRole('ROLE_USER')">
 						<a href="${pageContext.request.contextPath}/viewcart"><span
 								class="glyphicon glyphicon-shopping-cart"></span> Cart</a>
-					</li></sec:authorize>
+					</sec:authorize></li>
 					<sec:authorize access="isAnonymous()">
 						<li><a href="${pageContext.request.contextPath}/register"><span
 								class="glyphicon glyphicon-user"></span> Sign Up</a></li>

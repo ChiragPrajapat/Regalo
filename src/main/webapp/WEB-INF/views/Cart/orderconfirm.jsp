@@ -29,12 +29,14 @@ body{
 </head>
 
 <body>
+<form:form method="post">
+<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey} "/>
 	<h6>Your details has been received , please click below to confirm your
 	order.</h6>
-	<form:form role="form" action="">
+	
 		<div class="form-group">
 
-			<button type="submit" class="btn btn-default">Confirm</button>
+			<button type="submit" class="btn btn-default" name="_eventId_submit">Confirm</button>
 
 		</div>
 	</form:form>

@@ -18,7 +18,7 @@ public class CartDAOImpl implements CartDAO {
 	 @Autowired
 	    private SessionFactory sessionFactory;
 
-//	@Transactional
+	@Transactional
 	public void addToCart(Cart c) {
 			Session session = this.sessionFactory.openSession();
 			Transaction tx = session.beginTransaction();
@@ -26,7 +26,8 @@ public class CartDAOImpl implements CartDAO {
 			Product product = (Product)session.get(Product.class,productId);
 			double price = product.getProduct_price();
 			c.setPrice(price);
-			c.setProductName(product.getProduct_name());
+			c.setProductname(product.getProduct_name());
+			c.setQuantity(1);
 			session.saveOrUpdate(c);
 			tx.commit();
 			session.close();
@@ -40,7 +41,7 @@ public class CartDAOImpl implements CartDAO {
 		Session session = this.sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
 		Criteria cr = session.createCriteria(Cart.class);
-		cr.add(Restrictions.eq("userId", c.getUserId()));
+//		cr.add(Restrictions.eq("userId", c.getUserId()));
 		List<Cart>cartUser = cr.list();
 		System.out.println("cartUser");
 		for(Cart user: cartUser)
@@ -91,8 +92,6 @@ public class CartDAOImpl implements CartDAO {
 			else
 			return null;
 	}
-
-		
 	}
 
 	   

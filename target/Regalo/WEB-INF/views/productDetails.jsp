@@ -22,50 +22,54 @@
 	<div class="list-group" class="container" ng-app="myApp"
 		ng-controller="myCtrl">
 
-		<div ng-repeat="product in Data | filter: { product_id: '${param.id}'}">
+<%-- 		<div ng-repeat="product in Data | filter: { product_id: '${param.id}'}"> --%>
 		<center>
 <img src="<c:url value='/resources/images/{{product.category}}/{{product.image}}'/>" height="300px" width="300px" />
 </center>
 			<table class="table table-striped">
 				<tr>
 					<th>Name</th>
-					<td>{{product.product_name}}</td>
+					<td>${product.product_name}</td>
 				</tr>
 				<tr>
 					<th>Available Supplier</th>
-					<td>{{product.product_supplier}}</td>
+					<td>${product.product_supplier}</td>
 				</tr>
 				<tr>
 					<th>Price</th>
-					<td>{{product.product_price}}</td>
+					<td>${product.product_price}</td>
 				</tr>
 				<tr>
 					<th>Details</th>
-					<td>{{product.product_description}}</td>
+					<td>${product.product_description}</td>
 				</tr>
 				<tr>
 					<th>Category</th>
-					<td>{{product.product_category}}</td>
+					<td>${product.product_category}</td>
 				</tr>
 				<tr>
 			</table>
-		</div>
+			
+ 
 <sec:authorize access="hasRole('ROLE_USER')">
 
 <form:form method="POST"
-			action="${pageContext.request.contextPath}/addtocart?productId=${product.product_Id}"
-			modelAttribute="cart">
+			action="${pageContext.request.contextPath}/addtocart/${product.product_id}"
+			modelAttribute="cart" commndName="cart">
+<input type="hidden" name="_eventId" value="collectCustomerInfo">
+        <input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}" />
 
-			<input type="hidden" value="${product.product_Id}" />
-
-			<span class="h5"> <label>Quantity : </label>
-			<form:input path="quantity" class="form-control"
-					type="number" style="width:15%" min="1" />
-			</span>
-			<br />
+<input type="hidden" value="${param.id}" />
+<!-- 			<span class="h5"> <label>Quantity : </label> -->
+<%-- 			<form:input path="quantity"  --%>
+<%-- 			class="form-control" --%>
+<%-- 					type="number" style="width:15%"/> --%>
+<!-- 			</span> -->
+<!-- 			<br /> -->
 
 <input type="submit"value="add to cart">
 		</form:form>
+	
 		<a class="list-group-item" href="disp?id=4">
 			<button class="btn btn-primary btn-lg btn-block">Continue Shopping</button>
 		</a>

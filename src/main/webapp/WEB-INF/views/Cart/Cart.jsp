@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@include file="/WEB-INF/views/header.jsp"%>
+<%@ page isELIgnored="false"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,9 +22,10 @@
 				<tr>
 					<th>Cart id</th>
 					<th>Product Name</th>
+					<th>Product Id</th>
 					<th>Quantity</th>
 					<th>Price</th>
-					<th>Address></th>
+					<th>Address</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -29,37 +33,42 @@
 
 					<tr>
 						<td>${cart.cartId}</td>
-						<td>${cart.ProductName}</td>
+						<td>${cart.productname}</td>
+						<td>${cart.productId }
 						<td>${cart.quantity}</td>
 						<td>${cart.price}</td>
 						<td>${cart.address}</td>
-						<td>
-								<a href="cartdelete/${cart.cartId}">Delete</a>
-				</td>
-
+						<td><a
+							href="${pageContext.request.contextPath}/cartdelete/${cart.cartId}">Delete</a>
+						</td>
 					</tr>
-
 				</c:forEach>
 				<tr>
-					<td><form:form role="form" action="disp?id=4">
+					<td><form:form role="form"
+							action="${pageContext.request.contextPath}/disp?id=4">
 							<div class="form-group">
-
-								<button type="submit" class="btn btn-default">Continue shopping</button>
-
+								<input type="submit" class="btn btn-default"
+									value="Continue shopping">
 							</div>
 						</form:form></td>
-					<td><form:form role="form" action="">
+					<td>
+						<%-- <form:form role="form" action="${pageContext.request.contextPath}/collectbillinginfo/${cart.cartId}">
 							<div class="form-group">
-
-								<button type="submit" class="btn btn-default">Checkout</button>
+								
+								<input type="submit" class="btn btn-default" value ="Checkout"/>
 
 							</div>
-						</form:form></td>
+						</form:form> --%>
+						 <form:form
+							action="${pageContext.request.contextPath}/collectbillinginfo/293">
+									<input type="hidden" id="cart" name="cart" value=${cart} />
+							<input type="submit" value="Check Out" />
+						</form:form>
+					</td>
 				</tr>
 			</tbody>
 		</table>
-
 	</div>
-<%@include file="/WEB-INF/views/footer.jsp"%>
+	<%@include file="/WEB-INF/views/footer.jsp"%>
 </body>
 </html>

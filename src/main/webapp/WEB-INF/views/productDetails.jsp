@@ -22,30 +22,30 @@
 	<div class="list-group" class="container" ng-app="myApp"
 		ng-controller="myCtrl">
 
-		<div ng-repeat="product in Data | filter: { product_id: '${param.id}'}">
+<%-- 		<div ng-repeat="product in Data | filter: { product_id: '${param.id}'}"> --%>
 		<center>
 <img src="<c:url value='/resources/images/{{product.category}}/{{product.image}}'/>" height="300px" width="300px" />
 </center>
 			<table class="table table-striped">
 				<tr>
 					<th>Name</th>
-					<td>{{product.product_name}}</td>
+					<td>${product.product_name}</td>
 				</tr>
 				<tr>
 					<th>Available Supplier</th>
-					<td>{{product.product_supplier}}</td>
+					<td>${product.product_supplier}</td>
 				</tr>
 				<tr>
 					<th>Price</th>
-					<td>{{product.product_price}}</td>
+					<td>${product.product_price}</td>
 				</tr>
 				<tr>
 					<th>Details</th>
-					<td>{{product.product_description}}</td>
+					<td>${product.product_description}</td>
 				</tr>
 				<tr>
 					<th>Category</th>
-					<td>{{product.product_category}}</td>
+					<td>${product.product_category}</td>
 				</tr>
 				<tr>
 			</table>
@@ -54,11 +54,12 @@
 <sec:authorize access="hasRole('ROLE_USER')">
 
 <form:form method="POST"
-			action="${pageContext.request.contextPath}/addtocart?product_id=${param.id}"
-			modelAttribute="cart">
+			action="${pageContext.request.contextPath}/addtocart/${product.product_id}"
+			modelAttribute="cart" commandName="cart">
+<input type="hidden" name="_eventId" value="collectCustomerInfo">
+        <input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}" />
 
-			<input type="hidden" value="${param.id} " />
-
+<input type="hidden" value="${param.id}" />
 <!-- 			<span class="h5"> <label>Quantity : </label> -->
 <%-- 			<form:input path="quantity"  --%>
 <%-- 			class="form-control" --%>
@@ -73,7 +74,6 @@
 			<button class="btn btn-primary btn-lg btn-block">Continue Shopping</button>
 		</a>
 		</sec:authorize>
-	</div>
 	</div>
 	<br>
 	<br>

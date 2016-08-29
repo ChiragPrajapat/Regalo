@@ -75,7 +75,7 @@
 				<td><form:input type="file" path="file" multiple="multiple" />
 				</td>
 			</tr>
-			<tr><input type="hidden"  name="${_csrf.parameterName}"   value="${_csrf.token}"/></tr>
+			<tr><td><input type="hidden"  name="${_csrf.parameterName}"   value="${_csrf.token}"/></td></tr>
 			<tr>
 				<td colspan="2"><input type="submit" value="Add" /></td>
 			</tr>
